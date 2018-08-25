@@ -34,5 +34,17 @@ namespace DotNet.Helpers.Tests.Linq
 
             Assert.AreEqual(result, true);
         }
+        [TestMethod]
+        public void WhenInputHas4ElementsAndChunkSizeIs5_Return1Chunk()
+        {
+            IEnumerable<int> input = new List<int>() { 1, 2, 3, 4 };
+            int expected1 = 1;
+
+            int actual1 = input.Chunk(5).Count();
+            
+            bool result = expected1 == actual1;
+
+            Assert.AreEqual(result, true);
+        }
     }
 }
