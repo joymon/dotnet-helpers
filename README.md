@@ -20,3 +20,13 @@ There are so many other initiatives to generalize programming methods and are av
 - [https://github.com/Hallmanac/Funqy-CSharp](https://github.com/Hallmanac/Funqy-CSharp)
 - [https://github.com/NoelKennedy/scalesque](https://github.com/NoelKennedy/scalesque)
 - [https://github.com/louthy/language-ext](https://github.com/louthy/language-ext)
+
+# Structure of this library
+
+- There would be only one nuget package with one assembly planned at this moment. That is created from single source repo using multi targetting features.
+- All the technological features will be there in that one assembly. If the application is targeting Full .Net framework, it will include all the helper classes for WinForms, WPF, ASP.Net etc.... This can be considered as drawback but the goal is to limit the pieces and have one nuget package with one assembly.
+
+# Contributions
+
+As normal via pull requests (PR). There is no slack channel, mail group or any other communication mechanism setup as its at the very early stage and not sure how long I will have interest into .Net
+To my understanding the advent of JavaScript Everywhere (Node, Electron etc...) and Scala for distributed backend programming is reducing the .Net foot print. For bare metal programming, .Net was never there.
