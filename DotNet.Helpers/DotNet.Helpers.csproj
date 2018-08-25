@@ -13,6 +13,8 @@
     <Description>Utilities and helper classes for faster .Net development</Description>
     <AssemblyName>DotNetUtilities</AssemblyName>
     <PackageTags>.Net Library C# VB.Net Functional</PackageTags>
+    <PackageProjectUrl>https://github.com/joymon/dotnet-helpers</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/joymon/dotnet-helpers</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net46' or '$(TargetFramework)' == 'net461' or '$(TargetFramework)' == 'net472'">
     <Reference Include="mscorlib" />
