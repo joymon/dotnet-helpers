@@ -4,14 +4,17 @@ using System.Linq;
 
 namespace DotNet.Helpers.Linq
 {
+    /// <summary>
+    /// Contains extension methods for <see cref="IEnumerable{T}"/>
+    /// </summary>
     public static class EnumerableExtensions
     {
         /// <summary>
         /// Chunk the sequence based on chunkSize and returns sequence of chunks.
         /// </summary>
-        /// <typeparam name="TResult"></typeparam>
-        /// <param name="source"></param>
-        /// <param name="chunkSize"></param>
+        /// <typeparam name="TResult">Type of source sequence.</typeparam>
+        /// <param name="source">Source sequence</param>
+        /// <param name="chunkSize">Size of chunk</param>
         /// <returns></returns>
         public static IEnumerable<IEnumerable<TResult>> Chunk<TResult>(this IEnumerable<TResult> source, int chunkSize)
         {
