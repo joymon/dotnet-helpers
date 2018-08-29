@@ -13,13 +13,7 @@ namespace DotNet.Helpers.WinForms
             preAction();
             action.ExecuteWithCatchAndFinally((ex => MessageBox.Show($"Exception - {ex}")), final);
         }
-        public static async Task ExecuteWithEnableAndDisableAsync(this Control btn, Action action)
-        {
-            WinForms.Extensions.ExecutePreTryCatchWithMessageAndFinally(
-                () => btn.Enabled = false,
-                () => action(),
-                () => btn.Enabled = true);
-        }
+        
         public static void InvokeIfRequired(this ISynchronizeInvoke _target, Action action)
         {
             if (_target.InvokeRequired)
