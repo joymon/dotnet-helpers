@@ -12,9 +12,9 @@ namespace DotNet.Helpers.Tests.Linq
         ///<summary>
         ///Really bad test for Random. There are chances that both the times the first element will still be 1.
         ///</summary>
-        public void WhenInputHas4Elements_ShouldNotReturnFirstElement2ConsecutiveTimes()
+        public void WhenInputHas8Elements_ShouldNotReturnFirstElement2ConsecutiveTimes()
         {
-            IEnumerable<int> input = new List<int>() { 1, 2, 3, 4 };
+            IEnumerable<int> input = new List<int>() { 1, 2, 3, 4, 5, 6,7,8 };
             int notexpected = 1;
 
             int actual1 = input.Randomize().FirstOrDefault();
