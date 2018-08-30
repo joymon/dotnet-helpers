@@ -9,7 +9,7 @@ Utilities and helper classes for faster .Net development by writing less code
 
 # What is the purpose of this helper library
 This is yet another library for writing less .Net code to develop applications. Mainly focused on the functional programming concepts. To e frank C# lacks so much things which are helpful in functional programming. This will try to bridge that.
-Read the thoughts on why another library [here.](why-library.md)
+Read the thoughts on why another library [here](why-library.md)
 
 # Installation
 ```ps
