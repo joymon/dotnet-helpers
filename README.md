@@ -25,6 +25,11 @@ There are so many other initiatives to generalize programming methods and are av
 - [https://github.com/NoelKennedy/scalesque](https://github.com/NoelKennedy/scalesque)
 - [https://github.com/louthy/language-ext](https://github.com/louthy/language-ext)
 
+# Installation
+```ps
+Install-Package DotNet.Helpers -Version 0.0.30-beta
+```
+
 # Structure of this library
 
 - There would be only one nuget package with one assembly planned at this moment. That is created from single source repo using multi targetting features.
