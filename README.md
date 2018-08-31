@@ -28,3 +28,7 @@ This library using [SemVer](https://semver.org/) for versioning. For the version
 
 As normal via pull requests (PR). There is no slack channel, mail group or any other communication mechanism setup as its at the very early stage and not sure how long I will have interest into .Net
 To my understanding the advent of JavaScript Everywhere (Node, Electron etc...) and Scala for distributed backend programming is reducing the .Net foot print. For bare metal programming, .Net was never there.
+
+# Acknowledgments
+- Github for freely hosting the source code
+- AppVeyor for their free CI & CD support for all the open source projects.
