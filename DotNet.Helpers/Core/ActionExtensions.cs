@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DotNet.Helpers.Core
 {
@@ -26,7 +24,15 @@ namespace DotNet.Helpers.Core
             {
                 finalBody();
             }
-
+        }
+        /// <summary>
+        /// Executes action in try, executes catchBody on <see cref="Exception"/>.
+        /// </summary>
+        /// <param name="action">The action body to execute</param>
+        /// <param name="catchBody">The catch body to execute on any <see cref="Exception"/></param>
+        public static void ExecuteWithCatch(this Action action, Action<Exception> catchBody)
+        {
+            action.ExecuteWithCatchAndFinally(catchBody, () => { });
         }
     }
 }
