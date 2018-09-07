@@ -11,9 +11,6 @@ namespace DotNet.Helpers.Tests.Core
     public class Configurations_Get
     {
         [TestMethod]
-        ///<summary>
-        ///Really bad test for Random. There are chances that both the times the first element will still be 1.
-        ///</summary>
         public void WhenThereIsAppSettingAvailable_ReturnValue()
         {
             //Setup
