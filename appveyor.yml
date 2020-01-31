@@ -1,0 +1,39 @@
+version: 0.0.{build}
+image: Visual Studio 2017
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}-beta'
+  version_prefix: '{version}'
+  package_version: '{version}-beta'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+environment:
+  CODECOV_TOKEN: 5dcafaa2-bd1c-4757-9175-e4a0bfbe33c0
+before_build:
+- ps: dotnet restore
+build:
+  publish_nuget: true
+  verbosity: minimal
+after_test:
+- ps: >-
+    $ErrorActionPreference = "Stop"
+
+    dotnet test "DotNet.Helpers.Tests\DotNet.Helpers.Tests.csproj" /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Threshold=100 /p:ThresholdType=line --configuration Debug --no-build
+
+    if($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode )  }
+
+    choco install codecov --no-progress
+
+    codecov.exe -f "DotNet.Helpers.Tests\coverage.opencover.xml" -t $env:CODECOV_TOKEN
+artifacts:
+- path: '*.nupkg'
+  name: nupkg
+deploy:
+- provider: NuGet
+  api_key:
+    secure: e/71KNviNk29vIj8RtYgjcsZK2h8chrbPUSft7Wfad3KjRA6yizf3oT7vzCxy046
+  skip_symbols: true
+  on:
+    APPVEYOR_REPO_TAG: true
