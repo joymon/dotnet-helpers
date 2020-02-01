@@ -4,6 +4,126 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNet.Helpers.Core.ActionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNet.Helpers.Core.ActionExtensions.html",
+          "hash": "rBZXjpU5L9lGNtMarXKWuQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNet.Helpers.Core.Configurations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNet.Helpers.Core.Configurations.html",
+          "hash": "0sXOnW9TnV8Zs7u8BsZ4GA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNet.Helpers.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNet.Helpers.Core.html",
+          "hash": "+O1LOPx8KeTvd08VY/zVEw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNet.Helpers.Linq.EnumerableExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNet.Helpers.Linq.EnumerableExtensions.html",
+          "hash": "urGSxDT3dxs7mAvtUg87lg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNet.Helpers.Linq.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNet.Helpers.Linq.html",
+          "hash": "xxicpc1cky8mic6v9B4vJg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNet.Helpers.WinForms.ControlExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNet.Helpers.WinForms.ControlExtensions.html",
+          "hash": "NIg/6qY+X4dDd1xWHJ/ejA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNet.Helpers.WinForms.ISynchronizeInvokeExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNet.Helpers.WinForms.ISynchronizeInvokeExtensions.html",
+          "hash": "xd8GBPz6jIXXXEen+xFMZw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNet.Helpers.WinForms.TextBoxTraceListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNet.Helpers.WinForms.TextBoxTraceListener.html",
+          "hash": "i8uyysxZjV8fvpTj9Y5pbg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DotNet.Helpers.WinForms.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNet.Helpers.WinForms.html",
+          "hash": "LafnZlgLwfsLVJgVbcldwQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "xUiKPYAAtEQqQPUbXptu7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "articles/intro.md",
       "output": {
@@ -45,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "9SdHP2exCAS8CzaHy8BoiQ=="
+          "hash": "vLbPqZmPzXyms4J6GzlTWg=="
         }
       },
       "is_incremental": false,
@@ -66,6 +186,12 @@
           "incrementalPhase": "build",
           "total_file_count": 2,
           "skipped_file_count": 2
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 9,
+          "skipped_file_count": 9
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
