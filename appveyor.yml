@@ -21,23 +21,21 @@ build:
   publish_nuget: true
   verbosity: minimal
 after_build:
-- ps: |
-    DIR DotNet.Helpers\_site
-    git config --global credential.helper store
-    Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
-    git config --global user.email "joymon@gmail.com"
-    git config --global user.name "joymon"
-    git checkout master
-    Remove-Item docs -recurse -Force -ErrorAction Ignore
-    New-Item -ItemType Directory -Force docs
-    Copy-Item DotNet.Helpers\_site\* docs -recurse
-    dir docs
-    git status
-    git add docs
-    git status
-    git commit -m "[deploy ci]" -- docs 
-    git status
-    git push origin master
+- ps: git config --global credential.helper store
+- ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+- ps: git config --global user.email "joymon@gmail.com"
+- ps: git config --global user.name "joymon"
+- ps: git checkout master
+- ps: Remove-Item docs -recurse -Force -ErrorAction Ignore
+- ps: New-Item -ItemType Directory -Force docs
+- ps: Copy-Item DotNet.Helpers\_site\* docs -recurse
+- ps: dir docs
+- ps: git status
+- ps: git add docs
+- ps: git status
+- ps: git commit -m "[deploy ci]" -- docs 
+- ps: git status
+- ps: git push origin master
 after_test:
 - ps: >-
     $ErrorActionPreference = "Stop"
