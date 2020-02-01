@@ -11,11 +11,31 @@ dotnet_csproj:
   informational_version: '{version}'
 environment:
   CODECOV_TOKEN: 5dcafaa2-bd1c-4757-9175-e4a0bfbe33c0
+skip_commits:
+  message: /\[deploy ci\]/
 before_build:
 - ps: dotnet restore
 build:
   publish_nuget: true
   verbosity: minimal
+after_build:
+- ps:
+   DIR DotNet.Helpers\_site
+   git config --global credential.helper store
+   Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+   git config --global user.email "joymon@gmail.com"
+   git config --global user.name "joymon"
+   git checkout master
+   rd /s /q docs
+   New-Item -ItemType Directory -Force docs
+   Copy-Item DotNet.Helpers\_site\* docs -recurse
+   dir docs
+   git status
+   git add docs
+   git status
+   git commit -m "[deploy ci]" -- docs 
+   git status
+   git push origin master
 after_test:
 - ps: >-
     $ErrorActionPreference = "Stop"

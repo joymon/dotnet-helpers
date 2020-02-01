@@ -16,6 +16,9 @@
     <PackageProjectUrl>https://github.com/joymon/dotnet-helpers</PackageProjectUrl>
     <RepositoryUrl>https://github.com/joymon/dotnet-helpers</RepositoryUrl>
   </PropertyGroup>
+  <PropertyGroup>
+    <LogFile>Docfx-$(TargetFramework).log</LogFile>
+  </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net46' or '$(TargetFramework)' == 'net461' or '$(TargetFramework)' == 'net472'">
     <Reference Include="mscorlib" />
     <Reference Include="System" />
@@ -40,5 +43,11 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="coverage.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="docfx.console" Version="2.48.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 </Project>
