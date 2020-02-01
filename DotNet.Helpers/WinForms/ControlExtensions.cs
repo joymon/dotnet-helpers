@@ -7,9 +7,18 @@ using System.Threading.Tasks;
 
 namespace DotNet.Helpers.WinForms
 {
+    /// <summary>
+    /// Extensions for Control and its derived classes.
+    /// </summary>   
     public static class ControlExtensions
     {
-        public static async Task ExecuteWithEnableAndDisableAsync(this Control btn, Action action)
+        /// <summary>
+        /// Execute a block of code by disabling the control. Enable the control after execution even if there was an exception.
+        /// </summary>
+        /// <param name="control">The control which need to be disabled during execution</param>
+        /// <param name="action">Action code to execute</param>
+        /// <returns></returns>
+        public static async Task ExecuteWithEnableAndDisableAsync(this Control control, Action action)
         {
             Extensions.ExecutePreTryCatchWithMessageAndFinally(
                 () => btn.Enabled = false,
