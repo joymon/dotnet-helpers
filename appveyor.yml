@@ -26,7 +26,7 @@ after_build:
     git config --global user.email "joymon@gmail.com"
     git config --global user.name "joymon"
     git checkout master
-    & cmd.exe /c rd /s /q docs 
+    Remove-Item docs -recurse -Force -ErrorAction Ignore
     New-Item -ItemType Directory -Force docs
     Copy-Item DotNet.Helpers\_site\* docs -recurse
     dir docs
