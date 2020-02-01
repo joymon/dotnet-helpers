@@ -10,6 +10,19 @@ namespace DotNet.Helpers.Core
         /// <param name="action">The action body to execute</param>
         /// <param name="catchBody">The catch body to execute on any <see cref="Exception"/></param>
         /// <param name="finalBody">The finally body to execute on finally {} block</param>
+        /// <example>
+        /// This example shows how the ExecuteWithCatchAndFinally() can be used
+        /// <code>
+        /// Action body = () => { throw new Exception("dummy"); };
+        /// body.ExecuteWithCatchAndFinally((ex) =>
+        /// {
+        ///     Console.WriteLine("Exception catch handler");
+        /// }, () =>
+        /// {
+        ///     Console.WriteLine("Finally handler");
+        /// });
+        ///</code>
+        /// </example>
         public static void ExecuteWithCatchAndFinally(this Action action, Action<Exception> catchBody, Action finalBody)
         {
             try
