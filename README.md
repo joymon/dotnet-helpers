@@ -12,11 +12,16 @@ Utilities and helper classes for faster .Net development by writing less code
 # What is the purpose of this helper library
 This is yet another library for writing less .Net code to develop applications. Mainly focused on the functional programming concepts. To be frank C# lacks so much things which are helpful in functional programming. This will try to bridge that.
 Read the thoughts on why another library [here](why-library.md)
+# Getting started
 
-# Installation
+## Installation
 ```ps
 Install-Package DotNet.Helpers -Version 0.0.30-beta
 ```
+
+## Documentation
+
+[Documentation site - development version](https://joymon.github.io/dotnet-helpers) (Please note this may not be inline with nuget package)
 
 # Structure of this library
 
