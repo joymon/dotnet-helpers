@@ -4,10 +4,10 @@
       "src": [
         {
           "files": [
-            "**.csproj"
+            "*.csproj"
           ],
           "exclude": [ "**/bin/**", "**/obj/**" ],
-          "src": "dotnet-helpers\\DotNet.Helpers"
+          "src": "."
         }
       ],
       "dest": "api",
