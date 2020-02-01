@@ -11,6 +11,8 @@ dotnet_csproj:
   informational_version: '{version}'
 environment:
   CODECOV_TOKEN: 5dcafaa2-bd1c-4757-9175-e4a0bfbe33c0
+  access_token:
+    secure: YwffwDvba/ADlMJbtnOM7cKUqudcbYCt2K74HOtBvscwylmIMSRmrX2VKc+fuNjN
 skip_commits:
   message: /\[deploy ci\]/
 before_build:
