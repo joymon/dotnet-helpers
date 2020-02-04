@@ -8,11 +8,16 @@ namespace DotNet.Helpers.WinForms
 {
     public static class ISynchronizeInvokeExtensions
     {
-        public static void InvokeIfRequired(this ISynchronizeInvoke _target, Action action)
+        /// <summary>
+        /// Invoke the action using BeginInvoke, if called from different thread than the control created.
+        /// </summary>
+        /// <param name="target">The control which used to invoke the action</param>
+        /// <param name="action">Action to perform</param>
+        public static void InvokeIfRequired(this ISynchronizeInvoke target, Action action)
         {
-            if (_target.InvokeRequired)
+            if (target.InvokeRequired)
             {
-                _target.BeginInvoke(new Action(() =>
+                target.BeginInvoke(new Action(() =>
                 {
                     action();
                 }), null);
