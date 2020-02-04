@@ -11,51 +11,12 @@ namespace DotNet.Helpers.Tests.WinForms
     [TestClass]
     public class ISynchronizeInvokeExtensions_InvokeIfRequired
     {
-        //[TestMethod]
-        public void WhenCalledFromOtherThread_ShouldUseBeginInvoke()
-        {
-            Control ctrl = new Form();
-            ctrl.Enabled = false;
-            int threadIdWhereControlCreated = Thread.CurrentThread.ManagedThreadId;
-            int threadIdWhereControlModified = -1;
-            bool textChangesEventFired = false;
-            ctrl.TextChanged += (sender, e) =>
-            {
-                textChangesEventFired = true;
-            };
-            Task task = Task.Run(() =>
-              {
-                  threadIdWhereControlModified = Thread.CurrentThread.ManagedThreadId;
-
-                  if (ctrl.InvokeRequired)
-                  {
-                      ctrl.BeginInvoke(new Action(() =>
-                      {
-                          ctrl.Enabled = true;
-                          ctrl.Text = "from therad";
-                      }), null);
-                  }
-                  else
-                  {
-                      Assert.Fail("Reached same thread execution instead of InvokeRequired");
-                  }
-                  //ctrl.InvokeIfRequired(() =>
-                  //{
-                  //    threadIdWhereControlModified = Thread.CurrentThread.ManagedThreadId;
-                  //    ctrl.Enabled = true;
-                  //    ctrl.Text = "from therad";
-                  //});
-              });
-            task.Wait();
-            Assert.IsTrue(threadIdWhereControlCreated != threadIdWhereControlModified && textChangesEventFired && ctrl.Enabled);
-
-        }
         [TestMethod]
-        public void TestMethod1()
+        public void WhenCalledFromOtherThread_ShouldUseBeginInvoke()
         {
             bool finished = false;
             TestForm testForm = StartFormMain();
-            testForm.Finish += () =>
+            testForm.Finish += (sender, args) =>
             {
                 testForm.InvokeIfRequired(() =>
                 {
@@ -63,7 +24,7 @@ namespace DotNet.Helpers.Tests.WinForms
                     testForm.Close();
                 });
             };
-            testForm.btnAction.Text = "trigger";
+            testForm.Text = "trigger";
             while (!finished)
             {
                 Application.DoEvents();
@@ -75,54 +36,32 @@ namespace DotNet.Helpers.Tests.WinForms
         [STAThread]
         TestForm StartFormMain()
         {
-            //Application.SetCompatibleTextRenderingDefault(false);
             Application.EnableVisualStyles();
             TestForm rm = new TestForm();
-            //Application.Run(rm);
             rm.Show();
             return rm;
         }
     }
     public partial class TestForm : Form
     {
-        internal TextBox txtResult = new TextBox();
-        internal Button btnAction = new Button();
+        public event EventHandler Finish;
         public TestForm()
         {
-            btnAction.TextChanged += BtnAction_TextChanged;
+            this.TextChanged += TestForm_TextChanged;
         }
 
-        private void BtnAction_TextChanged(object sender, EventArgs e)
+        private void TestForm_TextChanged(object sender, EventArgs e)
         {
-            this.SetText();
+            this.SetTextInNewThread();
         }
 
-
-        public delegate void delFinish();
-        public event delFinish Finish;
-
-        public void SetText()
+        public void SetTextInNewThread()
         {
             Thread runner = new Thread(() =>
             {
-                Thread.Sleep(2000);
-
-                if (this.txtResult.InvokeRequired)
-                    this.txtResult.Invoke((MethodInvoker)(() =>
-                    {
-                        this.txtResult.Text = "Runner";
-
-                        if (Finish != null)
-                            Finish();
-                    }));
-                else
-                {
-                    this.txtResult.Text = "Runner";
-
-                    if (Finish != null)
-                        Finish();
-                }
-
+                //Thread.Sleep(500);
+                if (Finish != null)
+                    Finish(this, EventArgs.Empty);
             });
             runner.Start();
         }
