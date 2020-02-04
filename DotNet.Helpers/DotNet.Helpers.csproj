@@ -18,6 +18,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <LogFile>Docfx-$(TargetFramework).log</LogFile>
+    <LogLevel>Warning</LogLevel>
   </PropertyGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net46' or '$(TargetFramework)' == 'net461' or '$(TargetFramework)' == 'net472' or '$(TargetFramework)' == 'net48'">
     <Reference Include="mscorlib" />

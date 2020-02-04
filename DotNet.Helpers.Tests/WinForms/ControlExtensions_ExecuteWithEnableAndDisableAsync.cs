@@ -18,10 +18,11 @@ namespace DotNet.Helpers.Tests.WinForms
         {
             Control ctrl = new Control();
             ctrl.Enabled = true;
-            await ctrl.ExecuteWithEnableAndDisableAsync(() => {
+            await ctrl.ExecuteWithEnableAndDisableAsync(() =>
+            {
                 Assert.IsFalse(ctrl.Enabled);
             });
         }
     }
 }
-# endif
+#endif
