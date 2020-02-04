@@ -21,9 +21,9 @@ namespace DotNet.Helpers.WinForms
         public static async Task ExecuteWithEnableAndDisableAsync(this Control control, Action action)
         {
             Extensions.ExecutePreTryCatchWithMessageAndFinally(
-                () => btn.Enabled = false,
+                () => control.Enabled = false,
                 () => action(),
-                () => btn.Enabled = true);
+                () => control.Enabled = true);
         }
     }
 }
