@@ -1,7 +1,7 @@
 | Area      |      Badges  |
 |:----------|:-------------|
 | Build | [![Build status](https://ci.appveyor.com/api/projects/status/ry2o7n3as7j0axp8?svg=true)](https://ci.appveyor.com/project/joymon/dotnet-helpers)|
-| Code | ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/joymon/dotnet-helpers) ![GitHub repo size](https://img.shields.io/github/repo-size/joymon/dotnet-helpers)  [![Total alerts](https://img.shields.io/lgtm/alerts/g/joymon/dotnet-helpers.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/joymon/dotnet-helpers/alerts/)   |
+| Code | ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/joymon/dotnet-helpers) ![GitHub repo size](https://img.shields.io/github/repo-size/joymon/dotnet-helpers)  |
 | Code quallity | [![Total alerts](https://img.shields.io/lgtm/alerts/g/joymon/dotnet-helpers.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/joymon/dotnet-helpers/alerts/) |
 | Test |  [![codecov](https://codecov.io/gh/joymon/dotnet-helpers/branch/master/graph/badge.svg)](https://codecov.io/gh/joymon/dotnet-helpers) [![Test](https://img.shields.io/appveyor/tests/joymon/dotnet-helpers.svg)](https://ci.appveyor.com/project/joymon/dotnet-helpers) |
 | Issues | [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/joymon/dotnet-helpers.svg)](http://isitmaintained.com/project/joymon/dotnet-helpers "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/joymon/dotnet-helpers.svg)](http://isitmaintained.com/project/joymon/dotnet-helpers "Percentage of issues still open") |
