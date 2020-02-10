@@ -117,15 +117,16 @@
     <a href="https://github.com/joymon/dotnet-helpers/new/master/apiSpec/new?filename=DotNet_Helpers_WinForms_ISynchronizeInvokeExtensions_InvokeIfRequired_System_ComponentModel_ISynchronizeInvoke_System_Action_.md&amp;value=---%0Auid%3A%20DotNet.Helpers.WinForms.ISynchronizeInvokeExtensions.InvokeIfRequired(System.ComponentModel.ISynchronizeInvoke%2CSystem.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/joymon/dotnet-helpers/blob/master/DotNet.Helpers/WinForms/ISynchronizeInvokeExtensions.cs/#L11">View Source</a>
+    <a href="https://github.com/joymon/dotnet-helpers/blob/master/DotNet.Helpers/WinForms/ISynchronizeInvokeExtensions.cs/#L16">View Source</a>
   </span>
   <a id="DotNet_Helpers_WinForms_ISynchronizeInvokeExtensions_InvokeIfRequired_" data-uid="DotNet.Helpers.WinForms.ISynchronizeInvokeExtensions.InvokeIfRequired*"></a>
   <h4 id="DotNet_Helpers_WinForms_ISynchronizeInvokeExtensions_InvokeIfRequired_System_ComponentModel_ISynchronizeInvoke_System_Action_" data-uid="DotNet.Helpers.WinForms.ISynchronizeInvokeExtensions.InvokeIfRequired(System.ComponentModel.ISynchronizeInvoke,System.Action)">InvokeIfRequired(ISynchronizeInvoke, Action)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Invoke the action using BeginInvoke, if called from different thread than the control created.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void InvokeIfRequired(this ISynchronizeInvoke _target, Action action)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void InvokeIfRequired(this ISynchronizeInvoke target, Action action)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -139,13 +140,15 @@
     <tbody>
       <tr>
         <td><span class="xref">System.ComponentModel.ISynchronizeInvoke</span></td>
-        <td><span class="parametername">_target</span></td>
-        <td></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The control which used to invoke the action</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Action</span></td>
         <td><span class="parametername">action</span></td>
-        <td></td>
+        <td><p>Action to perform</p>
+</td>
       </tr>
     </tbody>
   </table>
