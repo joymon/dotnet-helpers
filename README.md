@@ -5,7 +5,6 @@
 | Code quallity | [![Total alerts](https://img.shields.io/lgtm/alerts/g/joymon/dotnet-helpers.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/joymon/dotnet-helpers/alerts/) |
 | Test |  [![codecov](https://codecov.io/gh/joymon/dotnet-helpers/branch/master/graph/badge.svg)](https://codecov.io/gh/joymon/dotnet-helpers) [![Test](https://img.shields.io/appveyor/tests/joymon/dotnet-helpers.svg)](https://ci.appveyor.com/project/joymon/dotnet-helpers) |
 | Issues | [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/joymon/dotnet-helpers.svg)](http://isitmaintained.com/project/joymon/dotnet-helpers "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/joymon/dotnet-helpers.svg)](http://isitmaintained.com/project/joymon/dotnet-helpers "Percentage of issues still open") |
-
 | Deployment | [![Build status](https://img.shields.io/nuget/v/DotNet.Helpers.svg)](https://www.nuget.org/packages/DotNet.Helpers) [![Build status](https://img.shields.io/nuget/dt/DotNet.Helpers.svg)](https://www.nuget.org/packages/DotNet.Helpers) |
 
 # DotNet.Helpers
