@@ -52,14 +52,8 @@ namespace DotNet.Helpers.Tests.WinForms
 
         private void TestForm_TextChanged(object sender, EventArgs e)
         {
-            this.SetTextInNewThread();
-        }
-
-        public void SetTextInNewThread()
-        {
             Thread runner = new Thread(() =>
             {
-                //Thread.Sleep(500);
                 if (Finish != null)
                     Finish(this, EventArgs.Empty);
             });
