@@ -15,7 +15,8 @@ namespace DotNet.Helpers.Tests.WinForms
         public void WhenCalledFromOtherThread_ShouldUseBeginInvoke()
         {
             bool finished = false;
-            TestForm testForm = StartFormMain();
+            TestForm testForm = new TestForm();
+            testForm.Show();
             testForm.Finish += (sender, args) =>
             {
                 testForm.InvokeIfRequired(() =>
@@ -32,32 +33,21 @@ namespace DotNet.Helpers.Tests.WinForms
             }
             Assert.IsTrue(finished);
         }
-
-        [STAThread]
-        TestForm StartFormMain()
-        {
-            Application.EnableVisualStyles();
-            TestForm rm = new TestForm();
-            rm.Show();
-            return rm;
-        }
     }
     public partial class TestForm : Form
     {
         public event EventHandler Finish;
         public TestForm()
         {
-            this.TextChanged += TestForm_TextChanged;
-        }
-
-        private void TestForm_TextChanged(object sender, EventArgs e)
-        {
-            Thread runner = new Thread(() =>
+            this.TextChanged += (sender, args) =>
             {
-                if (Finish != null)
-                    Finish(this, EventArgs.Empty);
-            });
-            runner.Start();
+                Thread runner = new Thread(() =>
+                {
+                    if (Finish != null)
+                        Finish(this, EventArgs.Empty);
+                });
+                runner.Start();
+            };
         }
     }
 }
