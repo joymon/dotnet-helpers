@@ -33,7 +33,15 @@ Install-Package DotNet.Helpers -Version 0.0.30-beta
 ## Versioning
 This library using [SemVer](https://semver.org/) for versioning. For the versions available, see the tags on this repository.
 
-# Contributions
+# Built with
+- C#, .Net - Language and framework
+- LGTM - Ensuring code quality
+- Synk - Security analysis
+- CodeCov - Test coverage
+- AppVeyor - Continuous integration and delivery
+- Nuget - Distributing library
+
+# Contributing
 
 As normal via pull requests (PR). There is no slack channel, mail group or any other communication mechanism setup as its at the very early stage and not sure how long I will have interest into .Net
 To my understanding the advent of JavaScript Everywhere (Node, Electron etc...) and Scala for distributed backend programming is reducing the .Net foot print. For bare metal programming, .Net was never there.
