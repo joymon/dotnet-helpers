@@ -25,7 +25,9 @@ Install-Package DotNet.Helpers -Version 0.0.30-beta
 
 [Documentation site - development version](https://joymon.github.io/dotnet-helpers) (Please note this may not be inline with nuget package)
 
-# Structure of this library
+# Development
+
+## Structure of this library
 
 - There would be only one nuget package with one assembly planned at this moment. That is created from single source repo using multi targetting features.
 - All the technological features will be there in that one assembly. If the application is targeting Full .Net framework, it will include all the helper classes for WinForms, WPF, ASP.Net etc.... This can be considered as drawback but the goal is to limit the pieces and have one nuget package with one assembly.
@@ -48,4 +50,5 @@ To my understanding the advent of JavaScript Everywhere (Node, Electron etc...) 
 
 # Acknowledgments
 - Github for freely hosting the source code
-- AppVeyor for their free CI & CD support for all the open source projects.
+- AppVeyor for their freemium pricing model.
+- All the developers whose technologies are used
