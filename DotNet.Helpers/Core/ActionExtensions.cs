@@ -65,7 +65,7 @@ namespace DotNet.Helpers.Core
                     exceptions.Add(ex);
                     if (shouldRetry(ex) && exceptions.Count <= delaysInMilliSecondsBetweenRetries.Length)
                     {
-                        Thread.Sleep(delaysInMilliSecondsBetweenRetries[exceptions.Count-1]);
+                        Thread.Sleep(delaysInMilliSecondsBetweenRetries[exceptions.Count - 1]);
                         continue;
                     }
                     else throw new AggregateException(exceptions); ;
@@ -74,11 +74,27 @@ namespace DotNet.Helpers.Core
         }
         public static void ExecuteWithRetry<ExceptionType>(this Action action, int[] delaysInMilliSecondsBetweenRetries) where ExceptionType : Exception
         {
-            action.ExecuteWithRetry<ExceptionType>( delaysInMilliSecondsBetweenRetries, (ex) => true);
+            action.ExecuteWithRetry<ExceptionType>(delaysInMilliSecondsBetweenRetries, (ex) => true);
         }
+        /// <summary>
+        /// Executes action with 3 retries, if the Exception of Type <typeparamref name="ExceptionType"/>
+        /// </summary>
+        /// <typeparam name="ExceptionType">Type of Exception on which retry happens</typeparam>
+        /// <param name="action">The action which to be executed with retry</param>
+        /// <example>
+        /// <code>
+        ///     bool retried = false;
+        ///     ActionExtensions.ExecuteWithRetry<Exception>(() =>
+        ///         {
+        ///             if (retried) Console.WriteLine("test action");
+        ///             else { retried = true; throw new Exception("Fake exception");
+        ///         }
+        ///     });
+        /// </code>
+        /// </example>
         public static void ExecuteWithRetry<ExceptionType>(this Action action) where ExceptionType : Exception
         {
-            action.ExecuteWithRetry<ExceptionType>(new int[] { 250,500,1000}, (ex) => true);
+            action.ExecuteWithRetry<ExceptionType>(new int[] { 250, 500, 1000 }, (ex) => true);
         }
         private static void ValidateAndThrowExceptions<ExceptionType>(Action action, int[] delaysInMilliSecondsBetweenRetries, Predicate<ExceptionType> shouldRetry) where ExceptionType : Exception
         {
