@@ -45,6 +45,31 @@ references:
   isSpec: "True"
   fullName: DotNet.Helpers.Core.ActionExtensions.ExecuteWithCatchAndFinally
   nameWithType: ActionExtensions.ExecuteWithCatchAndFinally
+- uid: DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry*
+  name: ExecuteWithRetry
+  href: api/DotNet.Helpers.Core.ActionExtensions.html#DotNet_Helpers_Core_ActionExtensions_ExecuteWithRetry_
+  commentId: Overload:DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry
+  isSpec: "True"
+  fullName: DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry
+  nameWithType: ActionExtensions.ExecuteWithRetry
+- uid: DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry``1(System.Action,System.Int32[])
+  name: ExecuteWithRetry<ExceptionType>(Action, Int32[])
+  href: api/DotNet.Helpers.Core.ActionExtensions.html#DotNet_Helpers_Core_ActionExtensions_ExecuteWithRetry__1_System_Action_System_Int32___
+  commentId: M:DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry``1(System.Action,System.Int32[])
+  name.vb: ExecuteWithRetry(Of ExceptionType)(Action, Int32())
+  fullName: DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry<ExceptionType>(System.Action, System.Int32[])
+  fullName.vb: DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry(Of ExceptionType)(System.Action, System.Int32())
+  nameWithType: ActionExtensions.ExecuteWithRetry<ExceptionType>(Action, Int32[])
+  nameWithType.vb: ActionExtensions.ExecuteWithRetry(Of ExceptionType)(Action, Int32())
+- uid: DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry``1(System.Action,System.Int32[],System.Predicate{``0})
+  name: ExecuteWithRetry<ExceptionType>(Action, Int32[], Predicate<ExceptionType>)
+  href: api/DotNet.Helpers.Core.ActionExtensions.html#DotNet_Helpers_Core_ActionExtensions_ExecuteWithRetry__1_System_Action_System_Int32___System_Predicate___0__
+  commentId: M:DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry``1(System.Action,System.Int32[],System.Predicate{``0})
+  name.vb: ExecuteWithRetry(Of ExceptionType)(Action, Int32(), Predicate(Of ExceptionType))
+  fullName: DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry<ExceptionType>(System.Action, System.Int32[], System.Predicate<ExceptionType>)
+  fullName.vb: DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry(Of ExceptionType)(System.Action, System.Int32(), System.Predicate(Of ExceptionType))
+  nameWithType: ActionExtensions.ExecuteWithRetry<ExceptionType>(Action, Int32[], Predicate<ExceptionType>)
+  nameWithType.vb: ActionExtensions.ExecuteWithRetry(Of ExceptionType)(Action, Int32(), Predicate(Of ExceptionType))
 - uid: DotNet.Helpers.Core.Configurations
   name: Configurations
   href: api/DotNet.Helpers.Core.Configurations.html
