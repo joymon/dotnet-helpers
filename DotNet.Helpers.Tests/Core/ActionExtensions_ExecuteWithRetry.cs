@@ -20,6 +20,7 @@ namespace DotNet.Helpers.Tests.Core
             ActionExtensions.ExecuteWithRetry<Exception>(()=>Console.WriteLine("test action"), null, null);
         }
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void WhenActionParameterIsNotNullAndDelaysIsNoNullButPredicateIsNull_ShouldRunAction()
         {
             bool executed=false;
