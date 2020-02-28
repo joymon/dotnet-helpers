@@ -101,6 +101,28 @@ references:
   fullName.vb: DotNet.Helpers.Core.Configurations.Get(Of ResultType)(System.String, System.Func(Of ResultType))
   nameWithType: Configurations.Get<ResultType>(String, Func<ResultType>)
   nameWithType.vb: Configurations.Get(Of ResultType)(String, Func(Of ResultType))
+- uid: DotNet.Helpers.Core.FuncExtensions
+  name: FuncExtensions
+  href: api/DotNet.Helpers.Core.FuncExtensions.html
+  commentId: T:DotNet.Helpers.Core.FuncExtensions
+  fullName: DotNet.Helpers.Core.FuncExtensions
+  nameWithType: FuncExtensions
+- uid: DotNet.Helpers.Core.FuncExtensions.ExecuteWithRetry*
+  name: ExecuteWithRetry
+  href: api/DotNet.Helpers.Core.FuncExtensions.html#DotNet_Helpers_Core_FuncExtensions_ExecuteWithRetry_
+  commentId: Overload:DotNet.Helpers.Core.FuncExtensions.ExecuteWithRetry
+  isSpec: "True"
+  fullName: DotNet.Helpers.Core.FuncExtensions.ExecuteWithRetry
+  nameWithType: FuncExtensions.ExecuteWithRetry
+- uid: DotNet.Helpers.Core.FuncExtensions.ExecuteWithRetry``2(System.Func{``0},System.Int32[],System.Predicate{``1})
+  name: ExecuteWithRetry<ResultType, ExceptionType>(Func<ResultType>, Int32[], Predicate<ExceptionType>)
+  href: api/DotNet.Helpers.Core.FuncExtensions.html#DotNet_Helpers_Core_FuncExtensions_ExecuteWithRetry__2_System_Func___0__System_Int32___System_Predicate___1__
+  commentId: M:DotNet.Helpers.Core.FuncExtensions.ExecuteWithRetry``2(System.Func{``0},System.Int32[],System.Predicate{``1})
+  name.vb: ExecuteWithRetry(Of ResultType, ExceptionType)(Func(Of ResultType), Int32(), Predicate(Of ExceptionType))
+  fullName: DotNet.Helpers.Core.FuncExtensions.ExecuteWithRetry<ResultType, ExceptionType>(System.Func<ResultType>, System.Int32[], System.Predicate<ExceptionType>)
+  fullName.vb: DotNet.Helpers.Core.FuncExtensions.ExecuteWithRetry(Of ResultType, ExceptionType)(System.Func(Of ResultType), System.Int32(), System.Predicate(Of ExceptionType))
+  nameWithType: FuncExtensions.ExecuteWithRetry<ResultType, ExceptionType>(Func<ResultType>, Int32[], Predicate<ExceptionType>)
+  nameWithType.vb: FuncExtensions.ExecuteWithRetry(Of ResultType, ExceptionType)(Func(Of ResultType), Int32(), Predicate(Of ExceptionType))
 - uid: DotNet.Helpers.Linq
   name: DotNet.Helpers.Linq
   href: api/DotNet.Helpers.Linq.html
