@@ -33,6 +33,18 @@ namespace DotNet.Helpers.Tests.Core
             ActionExtensions.ExecuteWithRetry<Exception>(() => Console.WriteLine("test action"), new int[] { });
         }
         [TestMethod]
+        public void WhenActionParameterIsNotNullAndDelaysHas5_ShouldRun()
+        {
+            ActionExtensions.ExecuteWithRetry<Exception>(() => Console.WriteLine("test action"), new int[] { 1, 2, 3, 4, 5 });
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void WhenActionParameterIsNotNullAndDelaysHasMoreThan5_ThrowArgumentOutOfRangeException()
+        {
+            ActionExtensions.ExecuteWithRetry<Exception>(() => Console.WriteLine("test action"), new int[] { 1, 2, 3, 4, 5, 6 });
+        }
+
+        [TestMethod]
         public void WhenActionParameterIsNotNullAndDelaysIsNoNullButExceptionHappened_ShouldRetry()
         {
             bool retried = false;

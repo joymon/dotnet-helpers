@@ -85,6 +85,7 @@ namespace DotNet.Helpers.Core
             if (action == null) throw new ArgumentNullException(nameof(action));
             if (delaysInMilliSecondsBetweenRetries == null) throw new ArgumentNullException(nameof(delaysInMilliSecondsBetweenRetries));
             if (delaysInMilliSecondsBetweenRetries.Length == 0) throw new ArgumentOutOfRangeException($"The number of elements in{nameof(delaysInMilliSecondsBetweenRetries)} should be 1-5");
+            if (delaysInMilliSecondsBetweenRetries.Length > 5) throw new ArgumentOutOfRangeException($"The number of elements in{nameof(delaysInMilliSecondsBetweenRetries)} should be 1-5");
             if (shouldRetry == null) throw new ArgumentNullException(nameof(shouldRetry));
         }
     }
