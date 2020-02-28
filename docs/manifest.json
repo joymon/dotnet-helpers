@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNet.Helpers.Core.ActionExtensions.html",
-          "hash": "980i9/CliD4+LaxNdSHgsw=="
+          "hash": "2cB1pLjT0VUjjC3LDixXWw=="
         }
       },
       "is_incremental": true,
@@ -29,11 +29,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DotNet.Helpers.Core.FuncExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNet.Helpers.Core.FuncExtensions.html",
+          "hash": "jv2cJHgyJbkBl10hWR3v2Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DotNet.Helpers.Core.yml",
       "output": {
         ".html": {
           "relative_path": "api/DotNet.Helpers.Core.html",
-          "hash": "+O1LOPx8KeTvd08VY/zVEw=="
+          "hash": "G4tXo4IqqstinnjMazvvzA=="
         }
       },
       "is_incremental": true,
@@ -117,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "xUiKPYAAtEQqQPUbXptu7g=="
+          "hash": "4lnFBeqyTiZz9Gybf3Eb0w=="
         }
       },
       "is_incremental": false,
@@ -181,6 +193,13 @@
         "skipped_file_count": 0
       },
       "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
@@ -190,15 +209,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 9,
-          "skipped_file_count": 9
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
+          "total_file_count": 10,
+          "skipped_file_count": 10
         }
       }
     },
