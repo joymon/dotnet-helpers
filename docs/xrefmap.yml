@@ -52,6 +52,15 @@ references:
   isSpec: "True"
   fullName: DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry
   nameWithType: ActionExtensions.ExecuteWithRetry
+- uid: DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry``1(System.Action)
+  name: ExecuteWithRetry<ExceptionType>(Action)
+  href: api/DotNet.Helpers.Core.ActionExtensions.html#DotNet_Helpers_Core_ActionExtensions_ExecuteWithRetry__1_System_Action_
+  commentId: M:DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry``1(System.Action)
+  name.vb: ExecuteWithRetry(Of ExceptionType)(Action)
+  fullName: DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry<ExceptionType>(System.Action)
+  fullName.vb: DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry(Of ExceptionType)(System.Action)
+  nameWithType: ActionExtensions.ExecuteWithRetry<ExceptionType>(Action)
+  nameWithType.vb: ActionExtensions.ExecuteWithRetry(Of ExceptionType)(Action)
 - uid: DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry``1(System.Action,System.Int32[])
   name: ExecuteWithRetry<ExceptionType>(Action, Int32[])
   href: api/DotNet.Helpers.Core.ActionExtensions.html#DotNet_Helpers_Core_ActionExtensions_ExecuteWithRetry__1_System_Action_System_Int32___
