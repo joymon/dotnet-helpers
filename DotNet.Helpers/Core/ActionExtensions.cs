@@ -49,6 +49,13 @@ namespace DotNet.Helpers.Core
         {
             action.ExecuteWithCatchAndFinally(catchBody, () => { });
         }
+        /// <summary>
+        /// Executes <see cref="Action"/> with <paramref name="delaysInMilliSecondsBetweenRetries"/> retries, if the Exception thrown of type <typeparamref name="ExceptionType"/>
+        /// </summary>
+        /// <typeparam name="ExceptionType">Type of Exception on which retry happens</typeparam>
+        /// <param name="action">The action which to be executed with retry</param>
+        /// <param name="delaysInMilliSecondsBetweenRetries">Array of delays in milliseconds</param>
+        /// <param name="shouldRetry">The retry <see cref="Predicate{T}"/> to control retry behavior</param>
         public static void ExecuteWithRetry<ExceptionType>(this Action action, int[] delaysInMilliSecondsBetweenRetries, Predicate<ExceptionType> shouldRetry) where ExceptionType : Exception
         {
             ValidateAndThrowExceptions<ExceptionType>(action, delaysInMilliSecondsBetweenRetries, shouldRetry);
@@ -59,7 +66,7 @@ namespace DotNet.Helpers.Core
              }, delaysInMilliSecondsBetweenRetries, shouldRetry);
         }
         /// <summary>
-        /// Executes action with <paramref name="delaysInMilliSecondsBetweenRetries"/> retries, if the Exception thrown of type <typeparamref name="ExceptionType"/>
+        /// Executes <see cref="Action"/> with <paramref name="delaysInMilliSecondsBetweenRetries"/> retries, if the Exception thrown of type <typeparamref name="ExceptionType"/>
         /// </summary>
         /// <typeparam name="ExceptionType">Type of Exception on which retry happens</typeparam>
         /// <param name="action">The action which to be executed with retry</param>
@@ -73,8 +80,8 @@ namespace DotNet.Helpers.Core
         /// </summary>
         /// <typeparam name="ExceptionType">Type of Exception on which retry happens</typeparam>
         /// <param name="action">The action which to be executed with retry</param>
-        /// <remarks>Retry interval is 250ms,500ms & 1second. Not configurable. Use <see cref="ExecuteWithRetry{ExceptionType}(Action, int[])" /> to control interval</remarks>
         /// <example>
+        /// This example shows how to invoke an <see cref="Action"/> with retry.
         /// <code>
         ///     bool retried = false;
         ///     ActionExtensions.ExecuteWithRetry<Exception>(() =>
@@ -85,6 +92,7 @@ namespace DotNet.Helpers.Core
         ///     });
         /// </code>
         /// </example>
+        /// <remarks>Retry interval is 250ms,500ms & 1second. Not configurable. Use <see cref="ExecuteWithRetry{ExceptionType}(Action, int[])" /> to control interval</remarks>
         public static void ExecuteWithRetry<ExceptionType>(this Action action) where ExceptionType : Exception
         {
             action.ExecuteWithRetry<ExceptionType>(new int[] { 250, 500, 1000 }, (ex) => true);
