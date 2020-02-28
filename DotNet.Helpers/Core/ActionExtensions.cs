@@ -51,26 +51,12 @@ namespace DotNet.Helpers.Core
         }
         public static void ExecuteWithRetry<ExceptionType>(this Action action, int[] delaysInMilliSecondsBetweenRetries, Predicate<ExceptionType> shouldRetry) where ExceptionType : Exception
         {
-            ValidateAndThrowExceptions(action, delaysInMilliSecondsBetweenRetries, shouldRetry);
-            var exceptions = new List<Exception>();
-            while (exceptions.Count <= delaysInMilliSecondsBetweenRetries.Length)
-            {
-                try
-                {
-                    action();
-                    return;
-                }
-                catch (ExceptionType ex)
-                {
-                    exceptions.Add(ex);
-                    if (shouldRetry(ex) && exceptions.Count <= delaysInMilliSecondsBetweenRetries.Length)
-                    {
-                        Thread.Sleep(delaysInMilliSecondsBetweenRetries[exceptions.Count - 1]);
-                        continue;
-                    }
-                    else throw new AggregateException(exceptions); ;
-                }
-            }
+            ValidateAndThrowExceptions<ExceptionType>(action, delaysInMilliSecondsBetweenRetries, shouldRetry);
+            FuncExtensions.ExecuteWithRetry<bool, ExceptionType>(() =>
+             {
+                 action();
+                 return true;
+             }, delaysInMilliSecondsBetweenRetries, shouldRetry);
         }
         /// <summary>
         /// Executes action with <paramref name="delaysInMilliSecondsBetweenRetries"/> retries, if the Exception thrown of type <typeparamref name="ExceptionType"/>
@@ -106,10 +92,6 @@ namespace DotNet.Helpers.Core
         private static void ValidateAndThrowExceptions<ExceptionType>(Action action, int[] delaysInMilliSecondsBetweenRetries, Predicate<ExceptionType> shouldRetry) where ExceptionType : Exception
         {
             if (action == null) throw new ArgumentNullException(nameof(action));
-            if (delaysInMilliSecondsBetweenRetries == null) throw new ArgumentNullException(nameof(delaysInMilliSecondsBetweenRetries));
-            if (delaysInMilliSecondsBetweenRetries.Length == 0) throw new ArgumentOutOfRangeException($"The number of elements in{nameof(delaysInMilliSecondsBetweenRetries)} should be 1-5");
-            if (delaysInMilliSecondsBetweenRetries.Length > 5) throw new ArgumentOutOfRangeException($"The number of elements in{nameof(delaysInMilliSecondsBetweenRetries)} should be 1-5");
-            if (shouldRetry == null) throw new ArgumentNullException(nameof(shouldRetry));
         }
     }
 }
