@@ -72,15 +72,22 @@ namespace DotNet.Helpers.Core
                 }
             }
         }
+        /// <summary>
+        /// Executes action with <paramref name="delaysInMilliSecondsBetweenRetries"/> retries, if the Exception thrown of type <typeparamref name="ExceptionType"/>
+        /// </summary>
+        /// <typeparam name="ExceptionType">Type of Exception on which retry happens</typeparam>
+        /// <param name="action">The action which to be executed with retry</param>
+        /// <param name="delaysInMilliSecondsBetweenRetries">Array of delays in milliseconds</param>
         public static void ExecuteWithRetry<ExceptionType>(this Action action, int[] delaysInMilliSecondsBetweenRetries) where ExceptionType : Exception
         {
             action.ExecuteWithRetry<ExceptionType>(delaysInMilliSecondsBetweenRetries, (ex) => true);
         }
         /// <summary>
-        /// Executes action with 3 retries, if the Exception of Type <typeparamref name="ExceptionType"/>
+        /// Executes action with 3 retries, if the Exception thrown of type <typeparamref name="ExceptionType"/>
         /// </summary>
         /// <typeparam name="ExceptionType">Type of Exception on which retry happens</typeparam>
         /// <param name="action">The action which to be executed with retry</param>
+        /// <remarks>Retry interval is 250ms,500ms & 1second. Not configurable. Use <see cref="ExecuteWithRetry{ExceptionType}(Action, int[])" /> to control interval</remarks>
         /// <example>
         /// <code>
         ///     bool retried = false;
