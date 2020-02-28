@@ -214,7 +214,7 @@ body.ExecuteWithCatchAndFinally((ex) =>
     <a href="https://github.com/joymon/dotnet-helpers/new/master/apiSpec/new?filename=DotNet_Helpers_Core_ActionExtensions_ExecuteWithRetry__1_System_Action_.md&amp;value=---%0Auid%3A%20DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry%60%601(System.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/joymon/dotnet-helpers/blob/master/DotNet.Helpers/Core/ActionExtensions.cs/#L88">View Source</a>
+    <a href="https://github.com/joymon/dotnet-helpers/blob/master/DotNet.Helpers/Core/ActionExtensions.cs/#L96">View Source</a>
   </span>
   <a id="DotNet_Helpers_Core_ActionExtensions_ExecuteWithRetry_" data-uid="DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry*"></a>
   <h4 id="DotNet_Helpers_Core_ActionExtensions_ExecuteWithRetry__1_System_Action_" data-uid="DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry``1(System.Action)">ExecuteWithRetry&lt;ExceptionType&gt;(Action)</h4>
@@ -263,11 +263,11 @@ body.ExecuteWithCatchAndFinally((ex) =>
     <a href="https://github.com/joymon/dotnet-helpers/new/master/apiSpec/new?filename=DotNet_Helpers_Core_ActionExtensions_ExecuteWithRetry__1_System_Action_System_Int32___.md&amp;value=---%0Auid%3A%20DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry%60%601(System.Action%2CSystem.Int32%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/joymon/dotnet-helpers/blob/master/DotNet.Helpers/Core/ActionExtensions.cs/#L67">View Source</a>
+    <a href="https://github.com/joymon/dotnet-helpers/blob/master/DotNet.Helpers/Core/ActionExtensions.cs/#L74">View Source</a>
   </span>
   <a id="DotNet_Helpers_Core_ActionExtensions_ExecuteWithRetry_" data-uid="DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry*"></a>
   <h4 id="DotNet_Helpers_Core_ActionExtensions_ExecuteWithRetry__1_System_Action_System_Int32___" data-uid="DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry``1(System.Action,System.Int32[])">ExecuteWithRetry&lt;ExceptionType&gt;(Action, Int32[])</h4>
-  <div class="markdown level1 summary"><p>Executes action with <code data-dev-comment-type="paramref" class="paramref">delaysInMilliSecondsBetweenRetries</code> retries, if the Exception thrown of type <code data-dev-comment-type="typeparamref" class="typeparamref">ExceptionType</code></p>
+  <div class="markdown level1 summary"><p>Executes <span class="xref">System.Action</span> with <code data-dev-comment-type="paramref" class="paramref">delaysInMilliSecondsBetweenRetries</code> retries, if the Exception thrown of type <code data-dev-comment-type="typeparamref" class="typeparamref">ExceptionType</code></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -321,11 +321,12 @@ body.ExecuteWithCatchAndFinally((ex) =>
     <a href="https://github.com/joymon/dotnet-helpers/new/master/apiSpec/new?filename=DotNet_Helpers_Core_ActionExtensions_ExecuteWithRetry__1_System_Action_System_Int32___System_Predicate___0__.md&amp;value=---%0Auid%3A%20DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry%60%601(System.Action%2CSystem.Int32%5B%5D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/joymon/dotnet-helpers/blob/master/DotNet.Helpers/Core/ActionExtensions.cs/#L52">View Source</a>
+    <a href="https://github.com/joymon/dotnet-helpers/blob/master/DotNet.Helpers/Core/ActionExtensions.cs/#L59">View Source</a>
   </span>
   <a id="DotNet_Helpers_Core_ActionExtensions_ExecuteWithRetry_" data-uid="DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry*"></a>
   <h4 id="DotNet_Helpers_Core_ActionExtensions_ExecuteWithRetry__1_System_Action_System_Int32___System_Predicate___0__" data-uid="DotNet.Helpers.Core.ActionExtensions.ExecuteWithRetry``1(System.Action,System.Int32[],System.Predicate{``0})">ExecuteWithRetry&lt;ExceptionType&gt;(Action, Int32[], Predicate&lt;ExceptionType&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Executes <span class="xref">System.Action</span> with <code data-dev-comment-type="paramref" class="paramref">delaysInMilliSecondsBetweenRetries</code> retries, if the Exception thrown of type <code data-dev-comment-type="typeparamref" class="typeparamref">ExceptionType</code></p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -346,17 +347,20 @@ body.ExecuteWithCatchAndFinally((ex) =>
       <tr>
         <td><span class="xref">System.Action</span></td>
         <td><span class="parametername">action</span></td>
-        <td></td>
+        <td><p>The action which to be executed with retry</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span>[]</td>
         <td><span class="parametername">delaysInMilliSecondsBetweenRetries</span></td>
-        <td></td>
+        <td><p>Array of delays in milliseconds</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Predicate</span>&lt;ExceptionType&gt;</td>
         <td><span class="parametername">shouldRetry</span></td>
-        <td></td>
+        <td><p>The retry <span class="xref">System.Predicate&lt;T&gt;</span> to control retry behavior</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -371,7 +375,8 @@ body.ExecuteWithCatchAndFinally((ex) =>
     <tbody>
       <tr>
         <td><span class="parametername">ExceptionType</span></td>
-        <td></td>
+        <td><p>Type of Exception on which retry happens</p>
+</td>
       </tr>
     </tbody>
   </table>
