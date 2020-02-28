@@ -4,34 +4,59 @@ using System;
 
 namespace DotNet.Helpers.Tests.Core
 {
+
     [TestClass]
-    public class ActionExtensions_ExecuteWithRetry_3
+    public class ActionExtensions_ExecuteWithRetry
     {
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void WhenActionParameterIsNull_ThrowArgumentNullException()
         {
-            ActionExtensions.ExecuteWithRetry<Exception>(null, new[] { 1, 2 }, null);
+            ActionExtensions.ExecuteWithRetry<Exception>(null);
         }
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void WhenActionParameterIsNotNullButDelaysIsNull_ThrowArgumentNullException()
+        [ExpectedException(typeof(AggregateException))]
+        public void WhenActionParamIsNotNullAndExceptionThrown_AggregateException()
         {
-            ActionExtensions.ExecuteWithRetry<Exception>(()=>Console.WriteLine("test action"), null, null);
+            ActionExtensions.ExecuteWithRetry<Exception>(() => throw new Exception("test exception"));
+
         }
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void WhenActionParameterIsNotNullAndDelaysIsNoNullButPredicateIsNull_ShouldRunAction()
+        public void WhenActionParameterIsNotNullButExceptionHappened_ShouldRetry()
         {
-            bool executed=false;
-            ActionExtensions.ExecuteWithRetry<Exception>(() => executed=true, new int[] { 500}, null);
-            Assert.IsTrue(executed, "Action didn't execute");
+            bool retried = false;
+            ActionExtensions.ExecuteWithRetry<Exception>(() =>
+            {
+                if (retried) Console.WriteLine("test action");
+                else { retried = true; throw new Exception("Fake exception"); }
+            });
+            Assert.IsTrue(retried, "Not retried ");
         }
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void WhenActionParameterIsNotNullAndDelaysIsNoNullButPredicateIsNullAndExceptionHappened_ThrowArgumentNullException()
+        public void WhenActionParameterIsNotNullButExceptionHappenedFirst3Times_ShouldSuccessLastAttempt()
         {
-            ActionExtensions.ExecuteWithRetry<Exception>(() => Console.WriteLine("test action"), new int[] { 500 }, null);
+            int retryCount = 0;
+            ActionExtensions.ExecuteWithRetry<Exception>(() =>
+            {
+                if (retryCount == 3) Console.WriteLine("test action");
+                else { retryCount++; throw new Exception("Fake exception"); }
+            });
+            Assert.AreEqual(3,retryCount, "Not retried ");
+        }
+
+        [TestMethod]
+        public void WhenActionParamIsNotNullAndExceptionThrown_AggregateExceptionWith3Children()
+        {
+            int countOfChildExceptions = 0;
+            try
+            {
+                ActionExtensions.ExecuteWithRetry<Exception>(() => throw new Exception("test exception"));
+            }
+            catch(AggregateException aex)
+            {
+                countOfChildExceptions = aex.InnerExceptions.Count;
+            }
+            Assert.AreEqual(4, countOfChildExceptions, "AggregateException don't have enough child exceptions");
         }
     }
 }

@@ -76,6 +76,10 @@ namespace DotNet.Helpers.Core
         {
             action.ExecuteWithRetry<ExceptionType>( delaysInMilliSecondsBetweenRetries, (ex) => true);
         }
+        public static void ExecuteWithRetry<ExceptionType>(this Action action) where ExceptionType : Exception
+        {
+            action.ExecuteWithRetry<ExceptionType>(new int[] { 250,500,1000}, (ex) => true);
+        }
         private static void ValidateAndThrowExceptions<ExceptionType>(Action action, int[] delaysInMilliSecondsBetweenRetries, Predicate<ExceptionType> shouldRetry) where ExceptionType : Exception
         {
             if (action == null) throw new ArgumentNullException(nameof(action));
