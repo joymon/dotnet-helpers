@@ -16,10 +16,14 @@ namespace DotNet.Helpers.Linq
         /// <param name="source">Source sequence</param>
         /// <param name="chunkSize">Size of chunk</param>
         /// <returns></returns>
-        /// <example><code>
+        /// <example>
+        /// <code>
+        /// <![CDATA[
         /// IEnumerable<int> input = new List<int>() { 1, 2, 3, 4 };
         /// int sumofFirstChunk = input.Chunk(2).First().Sum();
-        /// </code></example>
+        /// ]]>
+        /// </code>
+        /// </example>
         public static IEnumerable<IEnumerable<TResult>> Chunk<TResult>(this IEnumerable<TResult> source, int chunkSize)
         {
             return source.
@@ -33,11 +37,15 @@ namespace DotNet.Helpers.Linq
         /// <typeparam name="TResult"></typeparam>
         /// <param name="source"></param>
         /// <returns></returns>
-        /// <example><code>
+        /// <example>
+        /// <code>
+        /// <![CDATA[
         /// IEnumerable<int> input = new List<int>() { 1, 2, 3, 4 };
-        /// IEnumerable<int> ramdomizedseQuence = input.Randomize();</code>
+        /// IEnumerable<int> ramdomizedseQuence = input.Randomize();
+        /// ]]>
+        /// </code>
         /// </example>
-        public  static IEnumerable<TResult> Randomize<TResult>(this IEnumerable<TResult> source)
+        public static IEnumerable<TResult> Randomize<TResult>(this IEnumerable<TResult> source)
         {
             return source.
                 Select((sourceItem, index) => new

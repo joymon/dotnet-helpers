@@ -92,7 +92,9 @@ namespace DotNet.Helpers.Core
         ///     });
         /// </code>
         /// </example>
-        /// <remarks>Retry interval is 250ms,500ms & 1second. Not configurable. Use <see cref="ExecuteWithRetry{ExceptionType}(Action, int[])" /> to control interval</remarks>
+        /// <remarks>
+        /// Retry interval is 250ms,500ms, 1second. Not configurable. Use <see cref="ExecuteWithRetry{ExceptionType}(Action, int[])" /> to control interval
+        /// </remarks>
         public static void ExecuteWithRetry<ExceptionType>(this Action action) where ExceptionType : Exception
         {
             action.ExecuteWithRetry<ExceptionType>(new int[] { 250, 500, 1000 }, (ex) => true);
