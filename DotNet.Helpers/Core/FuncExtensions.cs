@@ -34,7 +34,7 @@ namespace DotNet.Helpers.Core
                         Thread.Sleep(delaysInMilliSecondsBetweenRetries[exceptions.Count - 1]);
                         continue;
                     }
-                    else throw new AggregateException(exceptions);
+                    break;
                 }
             }
             throw new AggregateException(exceptions);
