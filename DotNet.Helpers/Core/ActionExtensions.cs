@@ -79,7 +79,7 @@ namespace DotNet.Helpers.Core
         /// Executes action with 3 retries, if the Exception thrown of type <typeparamref name="ExceptionType"/>
         /// </summary>
         /// <typeparam name="ExceptionType">Type of Exception on which retry happens</typeparam>
-        /// <param name="action">The action which to be executed with retry</param>
+        /// <param name="action">The <see cref="Action"/> which to be executed with retry</param>
         /// <example>
         /// This example shows how to invoke an <see cref="Action"/> with retry.
         /// <code>
