@@ -83,6 +83,7 @@ namespace DotNet.Helpers.Core
         /// <example>
         /// This example shows how to invoke an <see cref="Action"/> with retry.
         /// <code>
+        /// <![CDATA[
         ///     bool retried = false;
         ///     ActionExtensions.ExecuteWithRetry<Exception>(() =>
         ///         {
@@ -90,6 +91,7 @@ namespace DotNet.Helpers.Core
         ///             else { retried = true; throw new Exception("Fake exception");
         ///         }
         ///     });
+        /// ]]>
         /// </code>
         /// </example>
         /// <remarks>
