@@ -14,7 +14,7 @@ namespace DotNet.Helpers.Tests.WinForms
     public class TextBoxTraceListener_WriteLine
     {
         [TestMethod]
-        public async Task WhenCalled_TextBoxShouldGetValueWithNewLine()
+        public void WhenCalled_TextBoxShouldGetValueWithNewLine()
         {
             string expected = "Test Message"+ Environment.NewLine;
             TextBox tb = new TextBox() { Text = "" };

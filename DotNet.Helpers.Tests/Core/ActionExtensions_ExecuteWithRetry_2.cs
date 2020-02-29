@@ -60,7 +60,6 @@ namespace DotNet.Helpers.Tests.Core
         [ExpectedException(typeof(AggregateException))]
         public void WhenRetryFails_ShouldThrowAggregateException()
         {
-            bool retried = false;
             ActionExtensions.ExecuteWithRetry<Exception>(() =>
             {
                 throw new Exception("Fake exception");

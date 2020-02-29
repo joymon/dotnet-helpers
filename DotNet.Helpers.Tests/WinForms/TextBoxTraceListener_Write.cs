@@ -14,7 +14,7 @@ namespace DotNet.Helpers.Tests.WinForms
     public class TextBoxTraceListener_Write
     {
         [TestMethod]
-        public async Task WhenCalled_TextBoxShouldGetValue()
+        public void WhenCalled_TextBoxShouldGetValue()
         {
             string expected = "Test Message";
 
