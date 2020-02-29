@@ -14,7 +14,7 @@ namespace DotNet.Helpers.Core
         /// <param name="function">The Func to execute</param>
         /// <param name="delaysInMilliSecondsBetweenRetries">Array of delays in milliseconds</param>
         /// <param name="shouldRetry">The retry <see cref="Predicate{T}"/> to control retry behavior</param>
-        /// <returns></returns>
+        /// <returns>Result of <see cref="Func{TResult}"/> execution<></returns>
         public static ResultType ExecuteWithRetry<ResultType,ExceptionType>(this Func<ResultType> function, int[] delaysInMilliSecondsBetweenRetries, Predicate<ExceptionType> shouldRetry) where ExceptionType : Exception
         {
             ValidateAndThrowExceptions(function, delaysInMilliSecondsBetweenRetries, shouldRetry);
