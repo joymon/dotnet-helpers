@@ -45,7 +45,7 @@ namespace DotNet.Helpers.Tests.Core
         }
 
         [TestMethod]
-        public void WhenActionParamIsNotNullAndExceptionThrown_AggregateExceptionWith3Children()
+        public void WhenActionParamIsNotNullAndExceptionThrownEverytime_AggregateExceptionWith3Children()
         {
             int countOfChildExceptions = 0;
             try

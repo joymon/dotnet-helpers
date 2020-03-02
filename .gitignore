@@ -264,3 +264,4 @@ __pycache__/
 /DotNet.Helpers/api
 /**/_site
 /**/DocFX*.log
+/DotNet.Helpers/DotNet.Helpers.xml
