@@ -12,9 +12,10 @@
     <Product>DotNet Helpers</Product>
     <Description>Utilities and helper classes for faster .Net development</Description>
     <AssemblyName>DotNet.Helpers</AssemblyName>
-    <PackageTags>.Net Library C# VB.Net Functional</PackageTags>
+    <PackageTags>.Net Helper-Classes Library C# VB.Net Functional Extensions WinForms Linq Retry</PackageTags>
     <PackageProjectUrl>https://github.com/joymon/dotnet-helpers</PackageProjectUrl>
     <RepositoryUrl>https://github.com/joymon/dotnet-helpers</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <PropertyGroup>
     <LogFile>Docfx-$(TargetFramework).log</LogFile>
