@@ -4,6 +4,9 @@ using System.Threading;
 
 namespace DotNet.Helpers.Core
 {
+    /// <summary>
+    /// Extensions on <see cref="Func{TResult}"/> class.
+    /// </summary>
     public static class FuncExtensions
     {
         /// <summary>

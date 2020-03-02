@@ -3,6 +3,9 @@ using System.Configuration;
 using System.Linq;
 namespace DotNet.Helpers.Core
 {
+    /// <summary>
+    /// Class to work with application configuration.
+    /// </summary>
     public class Configurations
     {
         /// <summary>

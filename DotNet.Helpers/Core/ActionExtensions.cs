@@ -4,6 +4,9 @@ using System.Threading;
 
 namespace DotNet.Helpers.Core
 {
+    /// <summary>
+    /// Extensions on <see cref="Action"/> class.
+    /// </summary>
     public static class ActionExtensions
     {
         /// <summary>

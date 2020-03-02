@@ -42,6 +42,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
     <DefineConstants>TRACE</DefineConstants>
     <DocumentationFile>DotNet.Helpers.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
   </PropertyGroup>
   <ItemGroup>
     <None Remove="coverage.json" />
