@@ -37,6 +37,7 @@ This library using [SemVer](https://semver.org/) for versioning. For the version
 
 # Built with
 - C#, .Net - Language and framework
+- Visual Studio 2019 - IDE
 - LGTM - Ensuring code quality
 - Synk - Security analysis
 - CodeCov - Test coverage
