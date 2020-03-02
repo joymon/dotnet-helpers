@@ -46,7 +46,8 @@ This library using [SemVer](https://semver.org/) for versioning. For the version
 
 # Contributing
 
-As normal via pull requests (PR). There is no slack channel, mail group or any other communication mechanism setup as its at the very early stage and not sure how long I will have interest into .Net
+As normal via pull requests (PR). There is no slack channel, mail group or any other communication mechanism setup as this project is at the very early stage.I am not sure how long I will have interest into .Net. Full framework is already going out of main stream and only .Net Core will continue from .Net 5 onwards.
+
 To my understanding the advent of JavaScript Everywhere (Node, Electron etc...) and Scala for distributed backend programming is reducing the .Net foot print. For bare metal programming, .Net was never there.
 
 # Acknowledgments
