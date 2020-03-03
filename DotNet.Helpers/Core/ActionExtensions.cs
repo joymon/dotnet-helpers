@@ -10,6 +10,28 @@ namespace DotNet.Helpers.Core
     public static class ActionExtensions
     {
         /// <summary>
+        /// Executes action in try, executes catchBody on <see cref="Exception"/>.
+        /// </summary>
+        /// <param name="action">The action body to execute</param>
+        /// <param name="catchBody">The catch body to execute on any <see cref="Exception"/></param>
+        /// <example>
+        /// <code>
+        /// 
+        /// Action body = () => { throw new InvalidOperationException(); };
+        /// body.ExecuteWithCatch((ex) =>
+        /// {
+        ///     // Catch body
+        ///     Assert.IsInstanceOfType(ex, typeof(InvalidOperationException));
+        /// });
+        /// 
+        /// </code>
+        /// </example>
+        public static void ExecuteWithCatch(this Action action, Action<Exception> catchBody)
+        {
+            action.ExecuteWithCatchAndFinally(catchBody, () => { });
+        }
+
+        /// <summary>
         /// Executes action in try, executes catchBody on <see cref="Exception"/> and finalBody inside finally block.
         /// </summary>
         /// <param name="action">The action body to execute</param>
@@ -42,15 +64,6 @@ namespace DotNet.Helpers.Core
             {
                 finalBody();
             }
-        }
-        /// <summary>
-        /// Executes action in try, executes catchBody on <see cref="Exception"/>.
-        /// </summary>
-        /// <param name="action">The action body to execute</param>
-        /// <param name="catchBody">The catch body to execute on any <see cref="Exception"/></param>
-        public static void ExecuteWithCatch(this Action action, Action<Exception> catchBody)
-        {
-            action.ExecuteWithCatchAndFinally(catchBody, () => { });
         }
         /// <summary>
         /// Executes <see cref="Action"/> with <paramref name="delaysInMilliSecondsBetweenRetries"/> retries, if the Exception thrown of type <typeparamref name="ExceptionType"/>.

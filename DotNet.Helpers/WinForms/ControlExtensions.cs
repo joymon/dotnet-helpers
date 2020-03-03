@@ -15,14 +15,14 @@ namespace DotNet.Helpers.WinForms
         /// <summary>
         /// Execute a block of code by disabling the control. Enable the control after execution even if there was an exception.
         /// </summary>
-        /// <param name="control">The control which need to be disabled during execution</param>
+        /// <param name="control">The <see cref="Control"/> control which need to be disabled during execution</param>
         /// <param name="action">Action code to execute</param>
         /// <returns></returns>
         public static async Task ExecuteWithEnableAndDisableAsync(this Control control, Action action)
         {
             Extensions.ExecutePreTryCatchWithMessageAndFinally(
                 () => control.Enabled = false,
-                () => action(),
+                () =>  action(),
                 () => control.Enabled = true);
         }
     }
