@@ -12,9 +12,9 @@ namespace DotNet.Helpers.Tests.Linq
         ///<summary>
         ///Really bad test for Random. There are chances that both the times the first element will still be 1.
         ///</summary>
-        public void WhenInputHas8Elements_ShouldNotReturnFirstElement2ConsecutiveTimes()
+        public void WhenInputHas12Elements_ShouldNotReturnFirstElement2ConsecutiveTimes()
         {
-            IEnumerable<int> input = new List<int>() { 1, 2, 3, 4, 5, 6,7,8 };
+            IEnumerable<int> input = new List<int>() { 1, 2, 3, 4, 5, 6,7,8,9,10,11,12 };
             int notexpected = 1;
 
             int actual1 = input.Randomize().FirstOrDefault();
@@ -24,9 +24,9 @@ namespace DotNet.Helpers.Tests.Linq
             Assert.AreEqual(result, true);
         }
         [TestMethod]
-        public void WhenInputHas10Elements_ShouldNotReturnFirstElement2ConsecutiveTimes()
+        public void WhenInputHas20Elements_ShouldNotReturnFirstElement2ConsecutiveTimes()
         {
-            IEnumerable<int> input = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            IEnumerable<int> input = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15,16,17,18,19,20 };
             int notexpected = 1;
 
             int actual1 = input.Randomize().FirstOrDefault();
