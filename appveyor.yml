@@ -20,22 +20,6 @@ before_build:
 build:
   publish_nuget: true
   verbosity: minimal
-after_build:
-- git config --global credential.helper store
-- ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
-- git config --global user.email "joymon@gmail.com"
-- git config --global user.name "joymon"
-- git checkout master
-- ps: Remove-Item docs -recurse -Force -ErrorAction Ignore
-- ps: New-Item -ItemType Directory -Force docs
-- ps: Copy-Item DotNet.Helpers\_site\* docs -recurse
-- dir docs
-- git status
-- git add docs
-- git status
-- git commit -m "[deploy ci]" -- docs 
-- git status
-- git push origin master
 after_test:
 - ps: >-
     $ErrorActionPreference = "Stop"
@@ -57,3 +41,22 @@ deploy:
   skip_symbols: true
   on:
     APPVEYOR_REPO_TAG: true
+#---------------------------------#
+#        Deploy to docs           #
+#---------------------------------#
+on_success:
+- git config --global credential.helper store
+- ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+- git config --global user.email "joymon@gmail.com"
+- git config --global user.name "joymon"
+- git checkout master
+- ps: Remove-Item docs -recurse -Force -ErrorAction Ignore
+- ps: New-Item -ItemType Directory -Force docs
+- ps: Copy-Item DotNet.Helpers\_site\* docs -recurse
+- dir docs
+- git status
+- git add docs
+- git status
+- git commit -m "[deploy ci]" -- docs 
+- git status
+- git push origin master
