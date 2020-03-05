@@ -87,6 +87,20 @@ namespace DotNet.Helpers.Core
         /// <typeparam name="ExceptionType">Type of Exception on which retry happens</typeparam>
         /// <param name="action">The action which to be executed with retry</param>
         /// <param name="delaysInMilliSecondsBetweenRetries">Array of delays in milliseconds</param>
+        /// <example>
+        /// Below example retry one time. The <paramref name="delaysInMilliSecondsBetweenRetries"/> is expecting delays in milli seconds as the name means.
+        /// <code>
+        /// <![CDATA[
+        /// bool retried = false;
+        /// ActionExtensions.ExecuteWithRetry<Exception>(() =>
+        /// {
+        ///     if (retried) Console.WriteLine("Retried");
+        ///     else { retried = true; throw new Exception("Fake exception"); }
+        /// }, new int[] { 500,1000 });
+        /// Assert.IsTrue(retried, "Not retried ");
+        /// ]]>
+        /// </code>
+        /// </example>
         public static void ExecuteWithRetry<ExceptionType>(this Action action, int[] delaysInMilliSecondsBetweenRetries) where ExceptionType : Exception
         {
             action.ExecuteWithRetry<ExceptionType>(delaysInMilliSecondsBetweenRetries, (ex) => true);
