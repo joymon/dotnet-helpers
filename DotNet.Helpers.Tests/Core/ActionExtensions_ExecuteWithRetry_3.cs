@@ -33,5 +33,21 @@ namespace DotNet.Helpers.Tests.Core
         {
             ActionExtensions.ExecuteWithRetry<Exception>(() => Console.WriteLine("test action"), new int[] { 500 }, null);
         }
+        [TestMethod]
+        public void WhenAllParametersArePresent_shouldRetryPredicateNeedsToBeCalled()
+        {
+            bool shouldRetryPredicateCalled = false;
+            bool retried = false;
+            ActionExtensions.ExecuteWithRetry<Exception>(() =>
+            {
+                if (retried) Console.WriteLine("test action");
+                else { retried = true; throw new Exception("Fake exception"); }
+            }, new int[] { 500 }, (ex) =>
+            {
+                shouldRetryPredicateCalled = true;
+                return true;
+            });
+            Assert.IsTrue(shouldRetryPredicateCalled, "Not retried ");
+        }
     }
 }
