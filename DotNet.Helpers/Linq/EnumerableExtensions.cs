@@ -35,7 +35,7 @@ namespace DotNet.Helpers.Linq
         /// Randomize the sequence
         /// </summary>
         /// <typeparam name="TResult"></typeparam>
-        /// <param name="source"></param>
+        /// <param name="source">The source of sequence</param>
         /// <returns></returns>
         /// <example>
         /// <code>
