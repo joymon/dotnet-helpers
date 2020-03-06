@@ -18,7 +18,7 @@ Read the thoughts on why another library [here](why-library.md)
 
 ## Installation
 ```ps
-Install-Package DotNet.Helpers -Version 0.0.30-beta
+Install-Package DotNet.Helpers -Version 0.0.95-beta
 ```
 
 ## Documentation
