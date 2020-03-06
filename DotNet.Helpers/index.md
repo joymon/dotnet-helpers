@@ -8,6 +8,8 @@ Install-Package DotNet.Helpers
 ```
 ## Sample code
 
+Please refer the 'Api Documentation' section.
+
 ## License
 
 MIT
