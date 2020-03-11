@@ -44,6 +44,10 @@ This library using [SemVer](https://semver.org/) for versioning. For the version
 - AppVeyor - Continuous integration and delivery
 - Nuget - Distributing library
 
+# On the internet
+
+- [Another .Net Helper library via nuget package system](https://joymonscode.blogspot.com/2018/08/another-net-helper-library-via-nuget.html)
+
 # Contributing
 
 As normal via pull requests (PR). There is no slack channel, mail group or any other communication mechanism setup as this project is at the very early stage.I am not sure how long I will have interest into .Net. Full framework is already going out of main stream and only .Net Core will continue from .Net 5 onwards.
