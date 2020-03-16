@@ -10,12 +10,25 @@ namespace DotNet.Helpers.Core
     public static class FuncExtensions
     {
         /// <summary>
-        /// Executes function with 3 retries, if the Exception thrown of type <typeparamref name="ExceptionType"/>
+        /// Executes <paramref name="function"/> with retries, if the Exception thrown of type <typeparamref name="ExceptionType"/>
+        /// </summary>
+        /// <typeparam name="ResultType">The type of the result</typeparam>
+        /// <typeparam name="ExceptionType">The type of the <see cref="Exception"/> on which retry happens.</typeparam>
+        /// <param name="function">The <see cref="Func{TResult}"/> to execute.</param>
+        /// <param name="delaysInMilliSecondsBetweenRetries">The delays in milli seconds between retries.</param>
+        /// <returns>Result of <see cref="Func{TResult}"/> execution</returns>
+        public static ResultType ExecuteWithRetry<ResultType,ExceptionType>(this Func<ResultType> function, int[] delaysInMilliSecondsBetweenRetries) where ExceptionType : Exception
+        {
+            return ExecuteWithRetry<ResultType, ExceptionType>(function, delaysInMilliSecondsBetweenRetries, (ex) => true);
+        }
+
+        /// <summary>
+        /// Executes <paramref name="function"/> with retries, if the Exception thrown of type <typeparamref name="ExceptionType"/>
         /// </summary>
         /// <typeparam name="ResultType">Type of result</typeparam>
         /// <typeparam name="ExceptionType">Type of Exception on which retry happens</typeparam>
-        /// <param name="function">The Func to execute</param>
-        /// <param name="delaysInMilliSecondsBetweenRetries">Array of delays in milliseconds</param>
+        /// <param name="function">The <see cref="Func{TResult}"/> to execute</param>
+        /// <param name="delaysInMilliSecondsBetweenRetries">Array of delays in milliseconds between retries</param>
         /// <param name="shouldRetry">The retry <see cref="Predicate{T}"/> to control retry behavior</param>
         /// <returns>Result of <see cref="Func{TResult}"/> execution</returns>
         public static ResultType ExecuteWithRetry<ResultType,ExceptionType>(this Func<ResultType> function, int[] delaysInMilliSecondsBetweenRetries, Predicate<ExceptionType> shouldRetry) where ExceptionType : Exception
