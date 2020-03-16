@@ -114,6 +114,15 @@ references:
   isSpec: "True"
   fullName: DotNet.Helpers.Core.FuncExtensions.ExecuteWithRetry
   nameWithType: FuncExtensions.ExecuteWithRetry
+- uid: DotNet.Helpers.Core.FuncExtensions.ExecuteWithRetry``2(System.Func{``0},System.Int32[])
+  name: ExecuteWithRetry<ResultType, ExceptionType>(Func<ResultType>, Int32[])
+  href: api/DotNet.Helpers.Core.FuncExtensions.html#DotNet_Helpers_Core_FuncExtensions_ExecuteWithRetry__2_System_Func___0__System_Int32___
+  commentId: M:DotNet.Helpers.Core.FuncExtensions.ExecuteWithRetry``2(System.Func{``0},System.Int32[])
+  name.vb: ExecuteWithRetry(Of ResultType, ExceptionType)(Func(Of ResultType), Int32())
+  fullName: DotNet.Helpers.Core.FuncExtensions.ExecuteWithRetry<ResultType, ExceptionType>(System.Func<ResultType>, System.Int32[])
+  fullName.vb: DotNet.Helpers.Core.FuncExtensions.ExecuteWithRetry(Of ResultType, ExceptionType)(System.Func(Of ResultType), System.Int32())
+  nameWithType: FuncExtensions.ExecuteWithRetry<ResultType, ExceptionType>(Func<ResultType>, Int32[])
+  nameWithType.vb: FuncExtensions.ExecuteWithRetry(Of ResultType, ExceptionType)(Func(Of ResultType), Int32())
 - uid: DotNet.Helpers.Core.FuncExtensions.ExecuteWithRetry``2(System.Func{``0},System.Int32[],System.Predicate{``1})
   name: ExecuteWithRetry<ResultType, ExceptionType>(Func<ResultType>, Int32[], Predicate<ExceptionType>)
   href: api/DotNet.Helpers.Core.FuncExtensions.html#DotNet_Helpers_Core_FuncExtensions_ExecuteWithRetry__2_System_Func___0__System_Int32___System_Predicate___1__
