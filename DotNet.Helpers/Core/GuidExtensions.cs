@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace DotNet.Helpers.Core
 {
@@ -14,7 +15,10 @@ namespace DotNet.Helpers.Core
         /// <returns>Short <see cref="string"/> id.</returns>
         public static string ToShortString(this Guid id)
         {
-            return string.Empty;
+            return Convert.ToBase64String(id.ToByteArray())
+                    .Replace('+', '-')
+                    .Replace('/', '_')
+                    .Replace("=", "");
         }
     }
 }
