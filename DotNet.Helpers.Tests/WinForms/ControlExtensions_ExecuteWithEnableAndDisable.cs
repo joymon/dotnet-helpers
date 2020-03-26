@@ -1,41 +1,35 @@
 ﻿#if NETFULL
 using DotNet.Helpers.WinForms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DotNet.Helpers.Tests.WinForms
 {
     [TestClass]
-    public class ControlExtensions_ExecuteWithEnableAndDisableAsync
+    public class ControlExtensions_ExecuteWithEnableAndDisable
     {
         [TestMethod]
-        public async Task WhenCalled_ControlShouldBeDisabledDuringExecution()
+        public void WhenCalledWithoutException_Success()
         {
             Control ctrl = new Control
             {
                 Enabled = true
             };
-            await ctrl.ExecuteWithEnableAndDisableAsync(() =>
+            ctrl.ExecuteWithEnableAndDisable(() =>
             {
                 Assert.IsFalse(ctrl.Enabled);
             });
-            Assert.IsTrue(ctrl.Enabled);
         }
         [TestMethod]
-        public async Task WhenCalledWithException_ControlShouldBeEnabledAfterExecution()
+        public void WhenCalledWithException_ShouldEatExceptionAndEnableControl()
         {
             Control ctrl = new Control
             {
                 Enabled = true
             };
-            await ctrl.ExecuteWithEnableAndDisableAsync(() =>
+            ctrl.ExecuteWithEnableAndDisable(() =>
             {
-                throw new NotImplementedException();
+                throw new System.Exception();
             });
             Assert.IsTrue(ctrl.Enabled);
         }
