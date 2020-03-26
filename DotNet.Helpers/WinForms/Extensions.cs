@@ -8,13 +8,6 @@ namespace DotNet.Helpers.WinForms
 {
     internal static class Extensions
     {
-        internal static void ExecutePreTryEmptyCatchAndFinally(Action preAction,
-            Action action,
-            Action final)
-        {
-            preAction();
-            action.ExecuteWithCatchAndFinally((ex => { }), final);
-        }
         internal static async Task ExecutePreTryEmptyCatchAndFinallyAsync(Action preAction,
             Action action,
             Action final)
