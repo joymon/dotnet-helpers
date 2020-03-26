@@ -207,6 +207,19 @@ references:
   commentId: T:DotNet.Helpers.WinForms.ControlExtensions
   fullName: DotNet.Helpers.WinForms.ControlExtensions
   nameWithType: ControlExtensions
+- uid: DotNet.Helpers.WinForms.ControlExtensions.ExecuteWithEnableAndDisable(System.Windows.Forms.Control,System.Action)
+  name: ExecuteWithEnableAndDisable(Control, Action)
+  href: api/DotNet.Helpers.WinForms.ControlExtensions.html#DotNet_Helpers_WinForms_ControlExtensions_ExecuteWithEnableAndDisable_System_Windows_Forms_Control_System_Action_
+  commentId: M:DotNet.Helpers.WinForms.ControlExtensions.ExecuteWithEnableAndDisable(System.Windows.Forms.Control,System.Action)
+  fullName: DotNet.Helpers.WinForms.ControlExtensions.ExecuteWithEnableAndDisable(System.Windows.Forms.Control, System.Action)
+  nameWithType: ControlExtensions.ExecuteWithEnableAndDisable(Control, Action)
+- uid: DotNet.Helpers.WinForms.ControlExtensions.ExecuteWithEnableAndDisable*
+  name: ExecuteWithEnableAndDisable
+  href: api/DotNet.Helpers.WinForms.ControlExtensions.html#DotNet_Helpers_WinForms_ControlExtensions_ExecuteWithEnableAndDisable_
+  commentId: Overload:DotNet.Helpers.WinForms.ControlExtensions.ExecuteWithEnableAndDisable
+  isSpec: "True"
+  fullName: DotNet.Helpers.WinForms.ControlExtensions.ExecuteWithEnableAndDisable
+  nameWithType: ControlExtensions.ExecuteWithEnableAndDisable
 - uid: DotNet.Helpers.WinForms.ControlExtensions.ExecuteWithEnableAndDisableAsync(System.Windows.Forms.Control,System.Action)
   name: ExecuteWithEnableAndDisableAsync(Control, Action)
   href: api/DotNet.Helpers.WinForms.ControlExtensions.html#DotNet_Helpers_WinForms_ControlExtensions_ExecuteWithEnableAndDisableAsync_System_Windows_Forms_Control_System_Action_

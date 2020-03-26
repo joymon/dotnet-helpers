@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DotNet.Helpers.WinForms.ControlExtensions.html",
-          "hash": "feS3WVTFCWUkUtd6BmY01Q=="
+          "hash": "WbwTq0m0xE0OxFz8IEnqLA=="
         }
       },
       "is_incremental": true,
@@ -205,6 +205,13 @@
         "skipped_file_count": 0
       },
       "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
@@ -216,13 +223,6 @@
           "incrementalPhase": "build",
           "total_file_count": 11,
           "skipped_file_count": 11
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
         }
       }
     },
