@@ -24,7 +24,7 @@ after_test:
 - ps: >-
     $ErrorActionPreference = "Stop"
 
-    dotnet test "DotNet.Helpers.Tests\DotNet.Helpers.Tests.csproj" /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Threshold=100 /p:ThresholdType=line --configuration Debug
+    dotnet test "DotNet.Helpers.Tests\DotNet.Helpers.Tests.csproj" /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Threshold=100 /p:ThresholdType=line --configuration Debug --no-build
 
     if($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode )  }
 
