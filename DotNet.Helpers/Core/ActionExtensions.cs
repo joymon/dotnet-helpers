@@ -74,7 +74,7 @@ namespace DotNet.Helpers.Core
         /// <param name="shouldRetry">The retry <see cref="Predicate{T}"/> to control retry behavior</param>
         public static void ExecuteWithRetry<ExceptionType>(this Action action, int[] delaysInMilliSecondsBetweenRetries, Predicate<ExceptionType> shouldRetry) where ExceptionType : Exception
         {
-            ValidateAndThrowExceptions<ExceptionType>(action, delaysInMilliSecondsBetweenRetries, shouldRetry);
+            ValidateAndThrowExceptions<ExceptionType>(action);
             FuncExtensions.ExecuteWithRetry<bool, ExceptionType>(() =>
              {
                  action();
@@ -131,7 +131,7 @@ namespace DotNet.Helpers.Core
         {
             action.ExecuteWithRetry<ExceptionType>(new int[] { 250, 500, 1000 }, (ex) => true);
         }
-        private static void ValidateAndThrowExceptions<ExceptionType>(Action action, int[] delaysInMilliSecondsBetweenRetries, Predicate<ExceptionType> shouldRetry) where ExceptionType : Exception
+        private static void ValidateAndThrowExceptions<ExceptionType>(Action action) where ExceptionType : Exception
         {
             if (action == null) throw new ArgumentNullException(nameof(action));
         }
