@@ -21,5 +21,12 @@ namespace DotNet.Helpers.Tests.Core
             string shortId = id.ToShortString();
             Assert.AreEqual(22,shortId.Length, $"Received value {shortId} is not in correct length");
         }
+        [TestMethod]
+        public void WhenGuidToShortStringIsCalled2Times_ReturnShortIdsShouldNotBeSame()
+        {
+            string shortId1 = Guid.NewGuid().ToShortString();
+            string shortId2 = Guid.NewGuid().ToShortString();
+            Assert.AreNotEqual(shortId1, shortId2, $"Received shortId1 {shortId1}, shortId2 {shortId2}");
+        }
     }
 }
