@@ -18,7 +18,7 @@ namespace DotNet.Helpers.WinForms
                 Task t = Task.Run(action);
                 t.Wait();
             }
-            catch (Exception ex)
+            catch
             {
 
             }
