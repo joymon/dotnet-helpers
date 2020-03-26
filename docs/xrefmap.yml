@@ -132,6 +132,25 @@ references:
   fullName.vb: DotNet.Helpers.Core.FuncExtensions.ExecuteWithRetry(Of ResultType, ExceptionType)(System.Func(Of ResultType), System.Int32(), System.Predicate(Of ExceptionType))
   nameWithType: FuncExtensions.ExecuteWithRetry<ResultType, ExceptionType>(Func<ResultType>, Int32[], Predicate<ExceptionType>)
   nameWithType.vb: FuncExtensions.ExecuteWithRetry(Of ResultType, ExceptionType)(Func(Of ResultType), Int32(), Predicate(Of ExceptionType))
+- uid: DotNet.Helpers.Core.GuidExtensions
+  name: GuidExtensions
+  href: api/DotNet.Helpers.Core.GuidExtensions.html
+  commentId: T:DotNet.Helpers.Core.GuidExtensions
+  fullName: DotNet.Helpers.Core.GuidExtensions
+  nameWithType: GuidExtensions
+- uid: DotNet.Helpers.Core.GuidExtensions.ToShortString(System.Guid)
+  name: ToShortString(Guid)
+  href: api/DotNet.Helpers.Core.GuidExtensions.html#DotNet_Helpers_Core_GuidExtensions_ToShortString_System_Guid_
+  commentId: M:DotNet.Helpers.Core.GuidExtensions.ToShortString(System.Guid)
+  fullName: DotNet.Helpers.Core.GuidExtensions.ToShortString(System.Guid)
+  nameWithType: GuidExtensions.ToShortString(Guid)
+- uid: DotNet.Helpers.Core.GuidExtensions.ToShortString*
+  name: ToShortString
+  href: api/DotNet.Helpers.Core.GuidExtensions.html#DotNet_Helpers_Core_GuidExtensions_ToShortString_
+  commentId: Overload:DotNet.Helpers.Core.GuidExtensions.ToShortString
+  isSpec: "True"
+  fullName: DotNet.Helpers.Core.GuidExtensions.ToShortString
+  nameWithType: GuidExtensions.ToShortString
 - uid: DotNet.Helpers.Linq
   name: DotNet.Helpers.Linq
   href: api/DotNet.Helpers.Linq.html

@@ -41,11 +41,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/DotNet.Helpers.Core.GuidExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DotNet.Helpers.Core.GuidExtensions.html",
+          "hash": "b6k/h9Yu32VhR+KpmDo1/A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/DotNet.Helpers.Core.yml",
       "output": {
         ".html": {
           "relative_path": "api/DotNet.Helpers.Core.html",
-          "hash": "vEqO05/sYHOHgaQoZURPOg=="
+          "hash": "XGqK/Jf0u5RC0L7E7KuoXA=="
         }
       },
       "is_incremental": true,
@@ -129,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "4lnFBeqyTiZz9Gybf3Eb0w=="
+          "hash": "WchNwuAjmr2xnEUH5sobAw=="
         }
       },
       "is_incremental": false,
@@ -193,13 +205,6 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
@@ -209,8 +214,15 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 10,
-          "skipped_file_count": 10
+          "total_file_count": 11,
+          "skipped_file_count": 11
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
         }
       }
     },
