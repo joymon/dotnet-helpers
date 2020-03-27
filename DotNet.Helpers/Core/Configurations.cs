@@ -14,7 +14,17 @@ namespace DotNet.Helpers.Core
         /// <typeparam name="ResultType">Type of result.</typeparam>
         /// <param name="nameofConfiguration">Key of AppSettings entry.</param>
         /// <param name="defaultValue"> Default value delegate. This will be called if there is no appSetting entry found.</param>
-        /// <returns></returns>
+        /// <returns>Configuration value in <typeparamref name="ResultType"/> </returns>
+        /// <example>
+        /// <code>
+        /// <![CDATA[
+        /// // If the config file has the value, it will return that value. Else defaultValue.
+        /// string expected = "defaultValue";
+        /// string actual = new Configurations().Get<string>("nameOfStringAppSetting", () => "defaultValue");
+        /// Assert.AreEqual(expected, actual);
+        /// ]]>
+        /// </code>
+        /// </example>
         public ResultType Get<ResultType>(string nameofConfiguration, Func<ResultType> defaultValue)
         {
             return GetValueAdjustedToDefaultValue<ResultType>(nameofConfiguration, defaultValue);
