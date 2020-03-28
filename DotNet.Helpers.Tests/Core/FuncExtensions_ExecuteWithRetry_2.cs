@@ -25,7 +25,7 @@ namespace DotNet.Helpers.Tests.Core
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void WhenFuncParameterIsNotNullAndDelaysIsEmptyArray_ThrowArgumentNullException()
         {
-            FuncExtensions.ExecuteWithRetry<bool,Exception>(() => true, new int[] { });
+            FuncExtensions.ExecuteWithRetry<bool, Exception>(() => true, new int[] { });
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
@@ -45,30 +45,30 @@ namespace DotNet.Helpers.Tests.Core
         [TestMethod]
         public void WhenFuncParameterIsNotNullAndDelaysHas5_ShouldRun()
         {
-            FuncExtensions.ExecuteWithRetry<bool,Exception>(() => true, new int[] { 1, 2, 3, 4, 5 });
+            FuncExtensions.ExecuteWithRetry<bool, Exception>(() => true, new int[] { 1, 2, 3, 4, 5 });
         }
 
         [TestMethod]
         public void WhenFuncParameterIsNotNullAndDelaysIsNoNullButExceptionHappened_ShouldRetry()
         {
             bool retried = false;
-            FuncExtensions.ExecuteWithRetry<bool,Exception>(() =>
-            {
-                if (retried) return true;
-                else { retried = true; throw new Exception("Fake exception"); }
+            FuncExtensions.ExecuteWithRetry<bool, Exception>(() =>
+             {
+                 if (retried) return true;
+                 else { retried = true; throw new Exception("Fake exception"); }
 
-            }, new int[] { 500 });
+             }, new int[] { 500 });
             Assert.IsTrue(retried, "Not retried ");
         }
         [TestMethod]
         [ExpectedException(typeof(AggregateException))]
         public void WhenRetryFails_ShouldThrowAggregateException()
         {
-            FuncExtensions.ExecuteWithRetry<bool,Exception>(() =>
-            {
-                throw new Exception("Fake exception");
+            FuncExtensions.ExecuteWithRetry<bool, Exception>(() =>
+             {
+                 throw new Exception("Fake exception");
 
-            }, new int[] { 500 });
+             }, new int[] { 500 });
         }
     }
 }

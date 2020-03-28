@@ -31,6 +31,27 @@ namespace DotNet.Helpers.Core
         /// <param name="delaysInMilliSecondsBetweenRetries">Array of delays in milliseconds between retries</param>
         /// <param name="shouldRetry">The retry <see cref="Predicate{T}"/> to control retry behavior</param>
         /// <returns>Result of <see cref="Func{TResult}"/> execution</returns>
+        /// <example>
+        /// Below code shows how the retry behavior can be controlled by using shouldRetry <see cref="Predicate{T}"/>
+        /// <code>
+        /// <![CDATA[
+        /// bool shouldRetryPredicateCalled = false;
+        /// bool retried = false;
+        /// FuncExtensions.ExecuteWithRetry<int, Exception>(() =>
+        /// {
+        ///      if (retried) { Console.WriteLine("test func"); return 1; }
+        ///         else { retried = true; throw new Exception("Fake exception");}
+        /// },
+        /// new int[] { 500 },
+        /// (ex) =>
+        /// {
+        ///     shouldRetryPredicateCalled = true;
+        ///     return true; // This decides whether to retry or not along with the number of delays.
+        /// });
+        /// Assert.IsTrue(shouldRetryPredicateCalled, "Not retried ");
+        /// ]]>
+        /// </code>
+        /// </example>
         public static ResultType ExecuteWithRetry<ResultType,ExceptionType>(this Func<ResultType> function, int[] delaysInMilliSecondsBetweenRetries, Predicate<ExceptionType> shouldRetry) where ExceptionType : Exception
         {
             ValidateAndThrowExceptions(function, delaysInMilliSecondsBetweenRetries, shouldRetry);
