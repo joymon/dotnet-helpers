@@ -17,6 +17,7 @@ skip_commits:
   message: /\[deploy ci\]/
 before_build:
 - ps: dotnet restore
+- ps: (Get-Content -path DotNet.Helpers\index.md)  -replace '(\d+.)(\d+.)(\d+)',$env:APPVEYOR_BUILD_VERSION | Out-File DotNet.Helpers\index.md
 build:
   publish_nuget: true
   verbosity: minimal
