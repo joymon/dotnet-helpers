@@ -29,7 +29,7 @@ Install-Package DotNet.Helpers -Version 0.0.95-beta
 
 ## Structure of this library
 
-- There would be only one nuget package with one assembly planned at this moment. That is created from single source repo using multi targetting features.
+- There would be only one nuget package with one assembly planned at this moment. That is created from single source repo using multi targeting features.
 - All the technological features will be there in that one assembly. If the application is targeting Full .Net framework, it will include all the helper classes for WinForms, WPF, ASP.Net etc.... This can be considered as drawback but the goal is to limit the pieces and have one nuget package with one assembly.
 
 ## Versioning
