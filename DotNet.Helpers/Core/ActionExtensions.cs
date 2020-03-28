@@ -72,6 +72,26 @@ namespace DotNet.Helpers.Core
         /// <param name="action">The action which to be executed with retry</param>
         /// <param name="delaysInMilliSecondsBetweenRetries">Array of delays in milliseconds</param>
         /// <param name="shouldRetry">The retry <see cref="Predicate{T}"/> to control retry behavior</param>
+        /// <example>
+        /// Below code shows how the retry can be controlled using <paramref name="shouldRetry"/> <see cref="Predicate{T}"/>. 
+        /// Write the logic inside the <see cref="Predicate{T}"/> and return true to continue else return false.
+        /// <code>
+        /// <![CDATA[
+        /// bool shouldRetryPredicateCalled = false;
+        /// bool retried = false;
+        /// ActionExtensions.ExecuteWithRetry<Exception>(() =>
+        /// {
+        ///     if (retried) Console.WriteLine("test action");
+        ///     else { retried = true; throw new Exception("Fake exception"); }
+        /// }, new int[] { 500 }, (ex) =>
+        /// {
+        ///     shouldRetryPredicateCalled = true;
+        ///     return true;
+        /// });
+        /// Assert.IsTrue(shouldRetryPredicateCalled, "Not retried ");
+        /// ]]>
+        /// </code>
+        /// </example>
         public static void ExecuteWithRetry<ExceptionType>(this Action action, int[] delaysInMilliSecondsBetweenRetries, Predicate<ExceptionType> shouldRetry) where ExceptionType : Exception
         {
             ValidateAndThrowExceptions<ExceptionType>(action);

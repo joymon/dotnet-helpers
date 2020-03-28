@@ -32,7 +32,8 @@ namespace DotNet.Helpers.Core
         /// <param name="shouldRetry">The retry <see cref="Predicate{T}"/> to control retry behavior</param>
         /// <returns>Result of <see cref="Func{TResult}"/> execution</returns>
         /// <example>
-        /// Below code shows how the retry behavior can be controlled by using shouldRetry <see cref="Predicate{T}"/>
+        /// Below code shows how the retry behavior can be controlled by using shouldRetry <see cref="Predicate{T}"/>.
+        /// Write the logic inside the <see cref="Predicate{T}"/> and return true to continue else return false.
         /// <code>
         /// <![CDATA[
         /// bool shouldRetryPredicateCalled = false;
