@@ -6,7 +6,7 @@
     </TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>DotNet.Helpers</PackageId>
-    <Version>0.0.1-Beta</Version>
+    <Version>0.1.1-Beta</Version>
     <Authors>Joy George Kunjikkuru</Authors>
     <Company>JoymonOnline</Company>
     <Product>DotNet Helpers</Product>
