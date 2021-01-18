@@ -35,6 +35,13 @@ Install-Package DotNet.Helpers -Version 0.0.95-beta
 ## Versioning
 This library using [SemVer](https://semver.org/) for versioning. For the versions available, see the tags on this repository.
 
+## Supported .Net versions
+
+- .Net Standard 2.0, 2.1
+- .Net Core 2.1,3.1
+- .Net Framework 4.5,4.6,4.6.1,4.7.2, 4.8
+- .Net 5.0
+
 # Built with
 - C#, .Net - Language and framework
 - Visual Studio 2019 - IDE
