@@ -5,6 +5,8 @@ using System.Linq;
 
 namespace DotNet.Helpers.Tests.Linq
 {
+#if (NETFULL || NETCOREAPP3_1)
+
     [TestClass]
     public class EnumerableExtensions_Chunk
     {
@@ -47,4 +49,5 @@ namespace DotNet.Helpers.Tests.Linq
             Assert.AreEqual(result, true);
         }
     }
+#endif
 }

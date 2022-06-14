@@ -9,6 +9,7 @@ namespace DotNet.Helpers.Linq
     /// </summary>
     public static class EnumerableExtensions
     {
+#if (NETFULL || NETCOREAPP3_1)
         /// <summary>
         /// Chunk the sequence based on chunkSize and returns sequence of chunks.
         /// </summary>
@@ -31,6 +32,7 @@ namespace DotNet.Helpers.Linq
                 GroupBy(tuple => tuple.Index / chunkSize).
                 Select(group => group.Select(tuple => tuple.Value));
         }
+#endif
         /// <summary>
         /// Randomize the sequence
         /// </summary>

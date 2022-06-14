@@ -1,17 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net472;netcoreapp2.1;netcoreapp3.1;net5.0</TargetFrameworks>
+    <TargetFrameworks>net48;netcoreapp3.1;net6.0</TargetFrameworks>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net46' or '$(TargetFramework)' == 'net461' or '$(TargetFramework)' == 'net472'">
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net48'">
     <DefineConstants>NET45;NETFULL</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net472|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
   </PropertyGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net46' or '$(TargetFramework)' == 'net461' or '$(TargetFramework)' == 'net472'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -38,7 +38,7 @@
     <PackageReference Include="MSTest.TestAdapter" Version="1.3.2" />
     <PackageReference Include="MSTest.TestFramework" Version="1.3.2" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net46' or '$(TargetFramework)' == 'net461' or '$(TargetFramework)' == 'net472'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
     <PackageReference Include="Microsoft.TestPlatform" Version="15.8.0" />
   </ItemGroup>
 
