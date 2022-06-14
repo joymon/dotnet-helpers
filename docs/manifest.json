@@ -4,150 +4,6 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DotNet.Helpers.Core.ActionExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DotNet.Helpers.Core.ActionExtensions.html",
-          "hash": "2iK5VAscmlsUZfUe4yM5Nw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DotNet.Helpers.Core.Configurations.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DotNet.Helpers.Core.Configurations.html",
-          "hash": "EdKGxOAMgX3DCxObzWff2w=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DotNet.Helpers.Core.FuncExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DotNet.Helpers.Core.FuncExtensions.html",
-          "hash": "qt1Ntr0tX2HqYNPmmVSQnA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DotNet.Helpers.Core.GuidExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DotNet.Helpers.Core.GuidExtensions.html",
-          "hash": "b6k/h9Yu32VhR+KpmDo1/A=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DotNet.Helpers.Core.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DotNet.Helpers.Core.html",
-          "hash": "XGqK/Jf0u5RC0L7E7KuoXA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DotNet.Helpers.Linq.EnumerableExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DotNet.Helpers.Linq.EnumerableExtensions.html",
-          "hash": "tES5vBEmsdiqEfkag+0yuQ=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DotNet.Helpers.Linq.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DotNet.Helpers.Linq.html",
-          "hash": "xxicpc1cky8mic6v9B4vJg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DotNet.Helpers.WinForms.ControlExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DotNet.Helpers.WinForms.ControlExtensions.html",
-          "hash": "WbwTq0m0xE0OxFz8IEnqLA=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DotNet.Helpers.WinForms.ISynchronizeInvokeExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DotNet.Helpers.WinForms.ISynchronizeInvokeExtensions.html",
-          "hash": "m+1mfrGFIJ3QaZxn7x6FHw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DotNet.Helpers.WinForms.TextBoxTraceListener.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DotNet.Helpers.WinForms.TextBoxTraceListener.html",
-          "hash": "i8uyysxZjV8fvpTj9Y5pbg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/DotNet.Helpers.WinForms.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/DotNet.Helpers.WinForms.html",
-          "hash": "YoRoAZsUSos4gNsDkRbhrw=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "api/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "WchNwuAjmr2xnEUH5sobAw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
       "type": "Conceptual",
       "source_relative_path": "articles/intro.md",
       "output": {
@@ -177,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "yZgfi+zBLPelmRYGubXl/A=="
+          "hash": "0KP7gEwnOeuxd+Sk0cMVQw=="
         }
       },
       "is_incremental": true,
@@ -189,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "vLbPqZmPzXyms4J6GzlTWg=="
+          "hash": "9SdHP2exCAS8CzaHy8BoiQ=="
         }
       },
       "is_incremental": false,
@@ -211,12 +67,6 @@
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 11,
-          "skipped_file_count": 11
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
