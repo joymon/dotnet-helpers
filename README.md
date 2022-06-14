@@ -38,13 +38,13 @@ This library using [SemVer](https://semver.org/) for versioning. For the version
 ## Supported .Net versions
 
 - .Net Standard 2.0, 2.1
-- .Net Core 2.1,3.1
-- .Net Framework 4.5,4.6,4.6.1,4.7.2, 4.8
-- .Net 5.0
+- .Net Core 3.1
+- .Net Framework 4.6.2, 4.7, 4.7.1, 4.7.2, 4.8
+- .Net 6.0
 
 # Built with
 - C#, .Net - Language and framework
-- Visual Studio 2019 - IDE
+- Visual Studio 2022 - IDE
 - LGTM - Ensuring code quality
 - Synk - Security analysis
 - CodeCov - Test coverage
