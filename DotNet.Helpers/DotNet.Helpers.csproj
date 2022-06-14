@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>
-      netstandard2.0;netstandard2.1;net45;netcoreapp2.1;net46;net461;net472;netcoreapp3.1;net48;net5.0
-    </TargetFrameworks>
+      netstandard2.0;netstandard2.1;netcoreapp3.1;net462;net47;net471;net472;net48;net6.0
+   </TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>DotNet.Helpers</PackageId>
     <Version>0.1.1-Beta</Version>
@@ -21,7 +21,7 @@
     <LogFile>Docfx-$(TargetFramework).log</LogFile>
     <LogLevel>Warning</LogLevel>
   </PropertyGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net46' or '$(TargetFramework)' == 'net461' or '$(TargetFramework)' == 'net472' or '$(TargetFramework)' == 'net48'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462' or '$(TargetFramework)' == 'net47' or '$(TargetFramework)' == 'net471' or '$(TargetFramework)' == 'net472' or '$(TargetFramework)' == 'net48'">
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -34,13 +34,13 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
   </ItemGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net46' or '$(TargetFramework)' == 'net461' or '$(TargetFramework)' == 'net472' or '$(TargetFramework)' == 'net48'">
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net47' or '$(TargetFramework)' == 'net462' or '$(TargetFramework)' == 'net471' or '$(TargetFramework)' == 'net472' or '$(TargetFramework)' == 'net48'">
     <DefineConstants>NET45;NETFULL</DefineConstants>
     
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.1' or '$(TargetFramework)' == 'netstandard2.0' or '$(TargetFramework)' == 'netstandard2.1' or '$(TargetFramework)' == 'netcoreapp3.1' or '$(TargetFramework)' == 'net5.0'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.1' or '$(TargetFramework)' == 'netstandard2.0' or '$(TargetFramework)' == 'netstandard2.1' or '$(TargetFramework)' == 'netcoreapp3.1' or '$(TargetFramework)' == 'net6.0'">
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
-    <Compile Remove="WinForms\Extensions.cs"/>
+    <Compile Remove="WinForms\Extensions.cs" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
     <DefineConstants>TRACE</DefineConstants>
